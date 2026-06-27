@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./*"],
+      "@/components/*": ["./app/(admin)/ui/components/*"],
+      "@/context/*": ["./app/(admin)/ui/context/*"],
+      "@/theme/*": ["./app/(admin)/ui/theme/*"],
+      "@/onBoarding/*": ["./app/(admin)/ui/onBoarding/*"],
+      "@/utils/*": ["./app/(admin)/ui/utils/*"],
+      "@/services/*": ["./app/(admin)/ui/services/*"],
+      "@/indexedDB/*": ["./app/(admin)/ui/indexedDB/*"],
+      "@/map/*": ["./app/(admin)/ui/map/*"],
+      "@/StatesCities/*": ["./app/(admin)/ui/StatesCities/*"],
+      "@/restaurant/*": ["./app/(admin)/ui/restaurant/*"],
+      "@/pages/*": ["./app/(admin)/ui/pages/*"],
+      "@/hooks/*": ["./app/(admin)/ui/hooks/*"],
+      "@/assets/*": ["./public/assets/*"]
+    }
+  }
+}

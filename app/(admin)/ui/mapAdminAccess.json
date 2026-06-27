@@ -1,0 +1,47 @@
+[
+  { "label": "Insights", "path": "/dashboard/insights", "permission": "insights-read" },
+
+  { "label": "Onboard New Eatery", "path": "/onboarding", "permission": "onboard_new_eatery-read" },
+  { "label": "List Eatery", "path": "/list-restaurants", "permission": "list_eatery-read" },
+  { "label": "List Employees", "path": "/users/employees", "permission": "list_employees-read" },
+  { "label": "List Customers", "path": "/users/customers", "permission": "list_customers-read" },
+
+  { "label": "Recommendation", "path": "/recommendations", "permission": "recommendation-read" },
+  { "label": "Eatshot", "path": "/eatshot", "permission": "eatshot-read" },
+
+  { "label": "Cafe Gallery", "path": "/restaurants/gallery", "permission": "cafe_gallery-read" },
+  { "label": "Instagram", "path": "/integrations/instagram", "permission": "instagram-read" },
+
+  { "label": "Team", "path": "/team", "permission": "team-read" },
+  { "label": "AI Generation", "path": "/ai-image-gen", "permission": "ai_image_generation-read" },
+
+  { "label": "List Routes", "path": "/system/routes", "permission": "list_routes-read" },
+  { "label": "List Conditions", "path": "/system/conditions", "permission": "list_conditions-read" },
+  { "label": "List Banner Placement", "path": "/banners/placements", "permission": "list_banner_placement-read" },
+  { "label": "List Banners", "path": "/banners", "permission": "list_banners-read" },
+
+  { "label": "List Notification Campaigns", "path": "/notifications/campaign", "permission": "notification-read" },
+  { "label": "List Notification Template", "path": "/notifications/templates", "permission": "list_notification_template-read" },
+  { "label": "Notification History", "path": "/notifications/history", "permission": "notification-read" },
+
+  { "label": "Contributions", "path": "/gamification/contributions", "permission": "contributions-read" },
+  { "label": "Milestones", "path": "/gamification/milestones", "permission": "milestones-read" },
+  { "label": "Levels", "path": "/gamification/levels", "permission": "levels-read" },
+
+  { "label": "Universal Category", "path": "/catalog/categories", "permission": "universal_category-read" },
+  { "label": "Universal Item", "path": "/catalog/items", "permission": "universal_item-read" },
+  { "label": "Restaurant Menu", "path": "/restaurants/menu", "permission": "restaurant_menu-read" },
+  { "label": "Restaurant Combos", "path": "/restaurants/combos", "permission": "restaurant_combos-read" },
+  { "label": "Explore Food", "path": "/catalog/explore", "permission": "explore_food-read" },
+
+  { "label": "QR Management", "path": "/qr/management", "permission": "qr_management-read" },
+  { "label": "Table Management", "path": "/restaurants/tables", "permission": "table_management-read" },
+
+  { "label": "Find Eateries", "path": "/restaurants/find", "permission": "find_eateries-read" },
+
+  { "label": "Live Orders", "path": "/orders/live", "permission": "live_orders-read" },
+  { "label": "Order History", "path": "/orders/history", "permission": "order_history-read" },
+
+  { "label": "Team Role", "path": "/team/roles", "permission": "team_role-read" },
+  { "label": "Released Log", "path": "/released-log", "permission": "released_log-read" }
+]
