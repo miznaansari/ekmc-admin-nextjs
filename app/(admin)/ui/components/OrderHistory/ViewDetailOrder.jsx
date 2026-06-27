@@ -40,7 +40,7 @@ const ViewDetailOrder = ({ cafe_order_list_id }) => {
       setError('');
 
       const response = await axios.get(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/order-history/${id}`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/order-history/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

@@ -66,7 +66,7 @@ function EditUniversalRecommendation({ recommendation, onSuccess , handleClose})
   const [responseMessage, setResponseMessage] = useState("");
   const [responseType, setResponseType] = useState("");
   const [loading, setLoading] = useState(false);
-  const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
   const token = localStorage.getItem("authToken");
   const imgurl = recommendation.myeats_explore_cat_auzre_original_image_url;
   const [previewImage, setPreviewImage] = useState(imgurl || "");
@@ -156,7 +156,7 @@ function EditUniversalRecommendation({ recommendation, onSuccess , handleClose})
     
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/search-cat`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/search-cat`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -263,7 +263,7 @@ function EditUniversalRecommendation({ recommendation, onSuccess , handleClose})
 
     try {
       const response = await axios.put(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/admin/explore`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/admin/explore`,
         payload,
         {
           headers: {
@@ -303,7 +303,7 @@ function EditUniversalRecommendation({ recommendation, onSuccess , handleClose})
     try {
       setUploading(true)  
       const response = await axios.post(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/admin/cf/v1/upload`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/admin/cf/v1/upload`,
         formData,
         {
           headers: {
@@ -358,7 +358,7 @@ function EditUniversalRecommendation({ recommendation, onSuccess , handleClose})
       try{
         setGeneratingImage(true)
         const response = await axios.post(
-        `https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-ultra-generate-preview-06-06:predict?key=${import.meta.env.VITE_GEMINI_KEY}`,
+        `https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-ultra-generate-preview-06-06:predict?key=${process.env.VITE_GEMINI_KEY}`,
         {
           instances: [
             {

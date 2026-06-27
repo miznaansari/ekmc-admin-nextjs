@@ -15,7 +15,7 @@ import EditRoute from "../List Routes/EditRoute";
 import AddPlacement from "./AddPlacement";
 import EditPlacement from "./EditPlacement";
 import mapAdminAccess from "../../../mapAdminAccess.json"
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/ui/utils/nextRouting";
 import { formatUTCToLocal, FormattedDate } from "../../../utils/timeUtils";
 
 dayjs.extend(utc);
@@ -59,7 +59,7 @@ const ListPlacements = () => {
   });
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const token = localStorage.getItem("authToken");
-  const baseurl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseurl = process.env.VITE_REACT_APP_BACKEND_URL;
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [drawerContent, setDrawerContent] = useState(null);
   const [page, setPage] = useState(1);

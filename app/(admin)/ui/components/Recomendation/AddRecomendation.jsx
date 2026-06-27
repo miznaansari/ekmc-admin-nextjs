@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Box,
+import {Box,
   Button,
   TextField,
   Alert,
@@ -13,13 +12,11 @@ import {
   Paper,
   Stack,
   CircularProgress,
-  Grid2,
   IconButton,
   Typography,
   Snackbar,
   Switch,
-  FormControlLabel
-} from "@mui/material";
+  FormControlLabel} from "@mui/material";
 import axios from "axios";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -61,7 +58,7 @@ function AddRecommendation({ onSuccess, onCancel }) {
   });
 
   const token = localStorage.getItem("authToken");
-  const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
   const [cafes, setCafes] = useState([]);
   const [message, setMessage] = useState("");
   const [alertSeverity, setAlertSeverity] = useState("info");
@@ -301,8 +298,8 @@ function AddRecommendation({ onSuccess, onCancel }) {
                 </Button>
               </Stack>
             </Box>
-            <Grid2 container spacing={2}>
-              <Grid2 xs={12} width={"100%"}>
+            <Grid container spacing={2}>
+              <Grid xs={12} width={"100%"}>
                 <Controller
                   name="title"
                   control={control}
@@ -319,11 +316,11 @@ function AddRecommendation({ onSuccess, onCancel }) {
                     />
                   )}
                 />
-              </Grid2>
-            </Grid2>
+              </Grid>
+            </Grid>
 
-            <Grid2 container spacing={2}>
-              <Grid2 xs={12} width={"100%"}>
+            <Grid container spacing={2}>
+              <Grid xs={12} width={"100%"}>
                 <FormControl fullWidth >
                   <Controller
                     name="author"
@@ -364,10 +361,10 @@ function AddRecommendation({ onSuccess, onCancel }) {
                     )}
                   />
                 </FormControl>
-              </Grid2>
-            </Grid2>
-            <Grid2 container spacing={2}>
-              <Grid2 xs={12} width={"100%"}>
+              </Grid>
+            </Grid>
+            <Grid container spacing={2}>
+              <Grid xs={12} width={"100%"}>
                 <FormControl fullWidth >
                   <Controller
                     name="cafe"
@@ -399,8 +396,8 @@ function AddRecommendation({ onSuccess, onCancel }) {
                     )}
                   />
                 </FormControl>
-              </Grid2>
-            </Grid2>
+              </Grid>
+            </Grid>
 
             <Box >
               <LocalizationProvider dateAdapter={AdapterDayjs}>

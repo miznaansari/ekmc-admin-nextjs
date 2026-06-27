@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Box,
+import {Box,
   Button,
   Switch,
   FormControl,
@@ -16,14 +15,13 @@ import {
   TextField,
   Snackbar,
   Alert,
-  Grid2,
   useMediaQuery,
   useTheme,
   Dialog,
   DialogTitle,
   DialogContent,
-  DialogActions
-} from "@mui/material";
+  DialogActions,
+  Grid} from "@mui/material";
 
 import axios from "axios";
 import { Close } from "@mui/icons-material";
@@ -122,7 +120,7 @@ const EditProfileUser = ({ customer, onCancel, onSuccess, onClose , id}) => {
   //fetch customer by id-
   const fetchCustomerById =async()=>{
     try{
-      const response= await axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/admin/list-mobile-userById/${id}`,{
+      const response= await axios.get(`${process.env.VITE_REACT_APP_BACKEND_URL}/api/admin/list-mobile-userById/${id}`,{
         headers:{
           Authorization:`Bearer ${localStorage.getItem("authToken")}`
         }
@@ -191,7 +189,7 @@ const EditProfileUser = ({ customer, onCancel, onSuccess, onClose , id}) => {
     const fetchCities = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/city-list`,
+          `${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/city-list`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -242,7 +240,7 @@ const EditProfileUser = ({ customer, onCancel, onSuccess, onClose , id}) => {
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/admin/cf/v1/upload`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/admin/cf/v1/upload`,
         formData,
         {
           headers: {
@@ -269,7 +267,7 @@ const EditProfileUser = ({ customer, onCancel, onSuccess, onClose , id}) => {
     try {
       setLoading(true)
       const response = await axios.put(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/admin/edit-mobile-user/${customer.user_customer_id}`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/admin/edit-mobile-user/${customer.user_customer_id}`,
         {
           city_id: data.city?.value || "",
           status: data.status ? 1 : 0,
@@ -437,8 +435,8 @@ const EditProfileUser = ({ customer, onCancel, onSuccess, onClose , id}) => {
 
             {/* Form Fields */}
             <Typography variant="h6" mb={2}>User details</Typography>
-            <Grid2 container spacing={2}>
-              <Grid2 size={{ xs: 12 }}>
+            <Grid container spacing={2}>
+              <Grid size={{ xs: 12 }}>
                 <Controller
                   name="first_name"
                   control={control}
@@ -452,9 +450,9 @@ const EditProfileUser = ({ customer, onCancel, onSuccess, onClose , id}) => {
                     />
                   )}
                 />
-              </Grid2>
+              </Grid>
 
-              <Grid2 size={{ xs: 12 }}>
+              <Grid size={{ xs: 12 }}>
                 <Controller
                   name="last_name"
                   control={control}
@@ -468,9 +466,9 @@ const EditProfileUser = ({ customer, onCancel, onSuccess, onClose , id}) => {
                     />
                   )}
                 />
-              </Grid2>
+              </Grid>
 
-              <Grid2 size={{ xs: 12 }}>
+              <Grid size={{ xs: 12 }}>
                 <Controller
                   name="mobile_number"
                   control={control}
@@ -490,10 +488,10 @@ const EditProfileUser = ({ customer, onCancel, onSuccess, onClose , id}) => {
                     />
                   )}
                 />
-              </Grid2>
+              </Grid>
 
 
-              <Grid2 size={{ xs: 12 }}>
+              <Grid size={{ xs: 12 }}>
                 <Controller
                   name="email"
                   control={control}
@@ -508,9 +506,9 @@ const EditProfileUser = ({ customer, onCancel, onSuccess, onClose , id}) => {
                     />
                   )}
                 />
-              </Grid2>
+              </Grid>
 
-              <Grid2 size={{ xs: 12 }}>
+              <Grid size={{ xs: 12 }}>
                 <Controller
                   name="gender"
                   control={control}
@@ -536,9 +534,9 @@ const EditProfileUser = ({ customer, onCancel, onSuccess, onClose , id}) => {
                     </FormControl>
                   )}
                 />
-              </Grid2>
+              </Grid>
 
-              <Grid2 size={{ xs: 12 }}>
+              <Grid size={{ xs: 12 }}>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <Controller
                     name="date_of_birth"
@@ -565,9 +563,9 @@ const EditProfileUser = ({ customer, onCancel, onSuccess, onClose , id}) => {
                     )}
                   />
                 </LocalizationProvider>
-              </Grid2>
+              </Grid>
 
-              <Grid2 size={{ xs: 12 }}>
+              <Grid size={{ xs: 12 }}>
                 <Controller
                   name="city"
                   control={control}
@@ -603,9 +601,9 @@ const EditProfileUser = ({ customer, onCancel, onSuccess, onClose , id}) => {
                     />
                   )}
                 />
-              </Grid2>
+              </Grid>
 
-              <Grid2 size={{ xs: 12 }} >
+              <Grid size={{ xs: 12 }} >
                 <Box sx={{ display: "flex", alignItems: "center" }}>
                   <Typography sx={{ pr: 2 }}>Suspend</Typography>
                   <Controller
@@ -621,9 +619,9 @@ const EditProfileUser = ({ customer, onCancel, onSuccess, onClose , id}) => {
                     )}
                   />
                 </Box>
-              </Grid2>
+              </Grid>
 
-              <Grid2 size={{ xs: 12 }}>
+              <Grid size={{ xs: 12 }}>
                 <Controller
                   name="suspension_reason"
                   control={control}
@@ -639,9 +637,9 @@ const EditProfileUser = ({ customer, onCancel, onSuccess, onClose , id}) => {
                     />
                   )}
                 />
-              </Grid2>
+              </Grid>
 
-              <Grid2 size={{ xs: 12 }} >
+              <Grid size={{ xs: 12 }} >
                 <Box sx={{ display: "flex", alignItems: "center" }}>
                   <Typography sx={{ pr: 2 }}>Active</Typography>
                   <Controller
@@ -657,8 +655,8 @@ const EditProfileUser = ({ customer, onCancel, onSuccess, onClose , id}) => {
                     )}
                   />
                 </Box>
-              </Grid2>
-              <Grid2 size={{ xs: 12 }} >
+              </Grid>
+              <Grid size={{ xs: 12 }} >
                 <Box sx={{ display: "flex", alignItems: "center" }}>
                   <Typography sx={{ pr: 2 }}>Creator</Typography>
                   <Controller
@@ -674,8 +672,8 @@ const EditProfileUser = ({ customer, onCancel, onSuccess, onClose , id}) => {
                     )}
                   />
                 </Box>
-              </Grid2>
-              <Grid2 size={{ xs: 12 }} >
+              </Grid>
+              <Grid size={{ xs: 12 }} >
                 <Box sx={{ display: "flex", alignItems: "center" }}>
                   <Typography sx={{ pr: 2 }}>Test User</Typography>
                   <Controller
@@ -691,8 +689,8 @@ const EditProfileUser = ({ customer, onCancel, onSuccess, onClose , id}) => {
                     )}
                   />
                 </Box>
-              </Grid2>
-            </Grid2>
+              </Grid>
+            </Grid>
 
             {uploading && (
               <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>

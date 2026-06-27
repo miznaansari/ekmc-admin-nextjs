@@ -16,7 +16,7 @@ export default function UniversalCat({
   const [loading, setLoading] = useState(false);
   const debouncedSearch = useDebounce(search);
   const token = localStorage.getItem("authToken");
-  const baseurl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseurl = process.env.VITE_REACT_APP_BACKEND_URL;
   useEffect(() => {
     const fetchCategories = async () => {
       if (!debouncedSearch) {

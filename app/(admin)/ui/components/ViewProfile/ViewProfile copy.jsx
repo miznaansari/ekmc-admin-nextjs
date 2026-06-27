@@ -37,7 +37,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import axios from "axios";
 import Slider from "react-slick";
 import { DrawerContext } from "../../context/DrawerContext";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "@/ui/utils/nextRouting";
 
 const ViewProfile = ({ onClose }) => {
   const { cafeId } = useParams();
@@ -81,7 +81,7 @@ const ViewProfile = ({ onClose }) => {
 
   const paginatedEmployees = employees.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage);
 
-  const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
 
   /* =========================
      FETCH DATA

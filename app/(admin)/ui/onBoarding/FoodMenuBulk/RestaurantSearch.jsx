@@ -9,7 +9,7 @@ export default function RestaurantSearch({ label = "Search Restaurant", value, o
     const debouncedSearch = useDebounce(search, 300);
 
     const token = localStorage.getItem("authToken");
-    const baseurl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+    const baseurl = process.env.VITE_REACT_APP_BACKEND_URL;
 
     useEffect(() => {
         const fetchRestaurants = async () => {

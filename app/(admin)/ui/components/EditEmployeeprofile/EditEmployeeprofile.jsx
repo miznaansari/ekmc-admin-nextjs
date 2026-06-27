@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-  Box,
+import {Box,
   Grid,
   TextField,
   Button,
@@ -18,15 +17,13 @@ import {
   Paper,
   Stack,
   IconButton,
-  Grid2,
   InputAdornment,
   useMediaQuery,
   useTheme,
   Dialog,
   DialogTitle,
   DialogContent,
-  DialogActions,
-} from '@mui/material';
+  DialogActions,} from '@mui/material';
 import axios from 'axios';
 import { Controller, useForm } from 'react-hook-form';
 import { Close, PhotoCamera } from '@mui/icons-material';
@@ -73,7 +70,7 @@ const EditEmployeeProfile = ({ employeeId, onUpdate, onClose , onSuccess}) => {
   const isMobileScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   const token = localStorage.getItem('authToken');
-  const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
 const [selectedImage, setSelectedImage] = useState(null); // For crop dialog
       const [openCropDialog, setOpenCropDialog] = useState(false); // Crop dialog state
       const [aspectRatio] = useState(4 / 4);
@@ -587,7 +584,7 @@ const [selectedImage, setSelectedImage] = useState(null); // For crop dialog
             </Grid>
 
             {/* Photo id proof */}
-            <Grid2 xs={12} width={"100%"} display="flex" gap={1} alignItems="center">
+            <Grid xs={12} width={"100%"} display="flex" gap={1} alignItems="center">
               <FormControl variant="outlined" sx={{ flex: 1 }} size="small" margin="dense">
                 <InputLabel>Photo Proof ID (PDF only)</InputLabel>
                 <TextField
@@ -615,10 +612,10 @@ const [selectedImage, setSelectedImage] = useState(null); // For crop dialog
                   }}
                 />
               </Button>
-            </Grid2>
+            </Grid>
 
             {/* Address proof file */}
-            <Grid2 xs={12} display="flex" width={'100%'} gap={1} alignItems="center">
+            <Grid xs={12} display="flex" width={'100%'} gap={1} alignItems="center">
               <FormControl variant="outlined" sx={{ flex: 1 }} size="small" margin="dense">
                 <InputLabel>Address Proof ID (PDF only)</InputLabel>
                 <TextField
@@ -646,7 +643,7 @@ const [selectedImage, setSelectedImage] = useState(null); // For crop dialog
                   }}
                 />
               </Button>
-            </Grid2>
+            </Grid>
 
             {/* Status */}
             <Box sx={{ display: "flex", alignItems: "center", mt: 3, mb: 2 }}>

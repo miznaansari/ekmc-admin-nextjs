@@ -13,7 +13,7 @@ import duration from "dayjs/plugin/duration";
 import EditRoute from "../List Routes/EditRoute";
 import AddCondition from "./AddCondition";
 import EditConditions from "./EditCondition";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/ui/utils/nextRouting";
 import mapAdminAccess from "../../../mapAdminAccess.json"
 import { formatUTCToLocal, FormattedDate } from "../../../utils/timeUtils";
 
@@ -57,7 +57,7 @@ const ListConditions= ()=>{
                       });
             const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
             const token= localStorage.getItem("authToken");
-            const baseurl= import.meta.env.VITE_REACT_APP_BACKEND_URL;
+            const baseurl= process.env.VITE_REACT_APP_BACKEND_URL;
             const [drawerOpen, setDrawerOpen]=useState(false);
             const [drawerContent, setDrawerContent]= useState(null);
             const [page, setPage]=useState(1);

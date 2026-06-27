@@ -6,7 +6,7 @@ import {
     Grid
  
  } from "@mui/material";
- import { Route, Routes, useLocation, useNavigate, useParams } from "react-router";
+ import { Route, Routes, useLocation, useNavigate, useParams } from "@/ui/utils/nextRouting";
  import { useState, useRef, useEffect } from "react";
  import EditRestaurant from "./EditResturant";
  import { useMediaQuery, useTheme } from "@mui/system";

@@ -19,7 +19,7 @@ import {
 import Demo from "../restaurant/Demo";
 import { CloudArrowUp32Regular, Delete24Regular } from "@fluentui/react-icons";
 import instanceV1 from "../restaurant/authaxios"; // ✅ import axios instance
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/ui/utils/nextRouting";
 
 const STATIC_GALLERY = [];
 

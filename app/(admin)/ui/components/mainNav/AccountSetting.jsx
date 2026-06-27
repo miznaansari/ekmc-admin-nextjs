@@ -9,7 +9,7 @@ import {
   Stack,
   Avatar,
 } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link } from "@/ui/utils/nextRouting";
 import Spinner from "../../restaurant/Spinner";
 import ErrorText from "../../restaurant/ErrorText";
 import Demo from "../../restaurant/Demo";

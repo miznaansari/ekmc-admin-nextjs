@@ -4,7 +4,7 @@ import NotificationTriggerTable from "./NotificationTriggerTable.jsx";
 import AddEditTemplateForm from "./AddEdiTriggerForm.jsx";
 import GlobalSnackbar from "../../../utils/GlobalSnackbar.jsx";
 import Last7DaysAnalyticsDrawer from "./Last7DaysAnalyticsDrawer.jsx";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/ui/utils/nextRouting";
 import mapAdminAccess from "../../../mapAdminAccess.json"
 const NotificationCampaign = () => {
   const [searchTerm, setSearchTerm] = useState("");

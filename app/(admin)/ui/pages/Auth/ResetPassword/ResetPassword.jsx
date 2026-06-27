@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { TextField, Button, Typography, Box, Card, Snackbar, Alert, useTheme } from '@mui/material';
 // import authService from '../../services/authService';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from '@/ui/utils/nextRouting';
 // import Logo from '../assets/logo.png'; 
 
 const ResetPassword = () => {

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {useState } from "react";
 import Cropper from "react-easy-crop";
 import Slider from "@mui/material/Slider";
 import Dialog from "@mui/material/Dialog";
@@ -6,7 +6,8 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import getCroppedImg from "./CorpImage";
 // import Primary from "../Button/Primary";
-import { Button, Grid2 } from "@mui/material";
+import { Button,
+  Grid} from "@mui/material";
 import Outline from "./Outline";
 import { useMediaQuery } from "@mui/material";
 
@@ -118,7 +119,7 @@ const Demo = ({
         </div>
       </DialogContent>
       <DialogActions>
-        <Grid2
+        <Grid
           container
           style={{
             display: "flex",
@@ -127,15 +128,15 @@ const Demo = ({
             marginBottom: "1rem",
           }}
         >
-          <Grid2 item xs={12} sm={6}>
+          <Grid item xs={12} sm={6}>
             <Outline
               handleClick={handleClose}
               variant="outlined"
               value={"Cancel"}
               width={"100%"}
             />
-          </Grid2>
-          <Grid2 item xs={12} sm={6}>
+          </Grid>
+          <Grid item xs={12} sm={6}>
             <Button
               color="primary"
               onClick={showCroppedImage}
@@ -143,8 +144,8 @@ const Demo = ({
             >
               Crop and Save
             </Button>
-          </Grid2>
-        </Grid2>
+          </Grid>
+        </Grid>
       </DialogActions>
     </Dialog>
   );

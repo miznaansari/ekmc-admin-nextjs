@@ -47,7 +47,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { Check, Close } from '@mui/icons-material';
 import QRcodelatest from './QRcodelatest';
 import QRcodelatestView from './QRcodelatestView';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from '@/ui/utils/nextRouting';
 
 import mapAdminAccess from "../../../mapAdminAccess.json"
 import FrameBulkQRDownload from './FrameBulkQRDownload';
@@ -159,7 +159,7 @@ const GenerateQR = () => {
   const [cafeList, setCafeList] = useState([]); // Cafe list for the dropdown
   const [selectedCafe, setSelectedCafe] = useState([]); // Selected cafe for the assignment
   const [assignModalOpen, setAssignModalOpen] = useState(false); // State to control Assign Modal
-  const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
   const [loadingCreateQr, setLodingCreateQr] = useState(false);
   const theme = useTheme();
   const [searchCafeQuery, setSearchCafeQuery] = useState("");
@@ -183,7 +183,7 @@ const GenerateQR = () => {
   //fetch restaurants
   const fetchRestaurants = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/user/admin/cafe-list/get/all`, {
+      const response = await axios.get(`${process.env.VITE_REACT_APP_BACKEND_URL}/api/user/admin/cafe-list/get/all`, {
         headers: {
           Authorization: `Bearer ${token}`
         },

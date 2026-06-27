@@ -14,7 +14,7 @@ import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import SaveIcon from "@mui/icons-material/Save";
 import GroupIcon from "@mui/icons-material/Group";
 import instanceV1 from "../../restaurant/authaxios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/ui/utils/nextRouting";
 import QrDialog from "./QrDialog";
 
 const HelpDocumentation = ({

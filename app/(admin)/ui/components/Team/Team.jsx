@@ -3,7 +3,7 @@ import { Box, TextField, Paper, Typography, Button, MenuItem, Select } from "@mu
 import TeamTable from "./TeamTable.jsx";
 import AddEditTeamForm from "./AddEditTeamForm.jsx";
 import GlobalSnackbar from "../../utils/GlobalSnackbar.jsx";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/ui/utils/nextRouting";
 import mapAdminAccess from "../../mapAdminAccess.json"
 import instanceV1 from "../../restaurant/authaxios.jsx";
 const Team = () => {

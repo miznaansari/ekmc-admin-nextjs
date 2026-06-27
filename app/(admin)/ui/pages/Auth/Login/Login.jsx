@@ -21,7 +21,7 @@ import {
 } from '@mui/material';
 import { Visibility, VisibilityOff, ArrowBack } from '@mui/icons-material';
 import authService from '../../../services/authService';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from '@/ui/utils/nextRouting';
 import Logo from '@/assets/logo.png';
 import { CircularProgress } from '@mui/material';
 import instanceV1 from '../../../restaurant/authaxios';

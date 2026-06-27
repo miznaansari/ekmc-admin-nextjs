@@ -17,7 +17,7 @@ const ImageGallery = ({ cafeId, transferTargetCafeId = null, onSave = null }) =>
 
     const [isUploading, setIsUploading] = useState(false);
     const [transferringImageId, setTransferringImageId] = useState(null);
-    const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+    const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
     const token = localStorage.getItem('authToken')
 
     const [alert, setAlert] = useState({

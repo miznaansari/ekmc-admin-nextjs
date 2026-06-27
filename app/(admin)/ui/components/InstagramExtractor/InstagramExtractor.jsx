@@ -3,7 +3,7 @@ import { Box, TextField, Paper, Typography, Button, useMediaQuery, Stack, Grid, 
 import InstagramExtractorTable from "./InstagramExtractorTable.jsx";
 import AddEditInstagramExtractorForm from "./AddEditInstagramExtractorForm.jsx";
 import GlobalSnackbar from "../../utils/GlobalSnackbar.jsx";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/ui/utils/nextRouting";
 import mapAdminAccess from "../../mapAdminAccess.json";
 import instanceV1 from "../../restaurant/authaxios";
 import CheckCircleOutline from "@mui/icons-material/CheckCircleOutlined";

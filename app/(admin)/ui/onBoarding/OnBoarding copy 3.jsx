@@ -1,6 +1,6 @@
 // created by Mohd Mizna Ansari
 import { Stack, Box } from "@mui/material";
-import { useLocation, useNavigate, useParams } from "react-router";
+import { useLocation, useNavigate, useParams } from "@/ui/utils/nextRouting";
 import { useState, useEffect } from "react";
 import { useMediaQuery, useTheme } from "@mui/system";
 

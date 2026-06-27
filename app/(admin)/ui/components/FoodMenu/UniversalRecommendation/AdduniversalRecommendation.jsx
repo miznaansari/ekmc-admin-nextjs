@@ -47,7 +47,7 @@ function AddUniversalRecommendation({ open, handleClose, onSuccess }) {
   });
 
   const token = localStorage.getItem("authToken");
-  const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
   const theme = useTheme();
   const isMobileScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -74,7 +74,7 @@ function AddUniversalRecommendation({ open, handleClose, onSuccess }) {
   const fetchCategories = async (searchTerm) => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/search-cat`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/search-cat`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -150,7 +150,7 @@ function AddUniversalRecommendation({ open, handleClose, onSuccess }) {
     try {
       setLoading(true);
       const response = await axios.post(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/admin/explore`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/admin/explore`,
         payload,
         {
           headers: {
@@ -217,7 +217,7 @@ function AddUniversalRecommendation({ open, handleClose, onSuccess }) {
     try {
       setUploading(true)
       const response = await axios.post(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/admin/cf/v1/upload`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/admin/cf/v1/upload`,
         formData,
         {
           headers: {
@@ -266,7 +266,7 @@ function AddUniversalRecommendation({ open, handleClose, onSuccess }) {
       try{
         setGeneratingImage(true)
         const response = await axios.post(
-        `https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-ultra-generate-preview-06-06:predict?key=${import.meta.env.VITE_GEMINI_KEY}`,
+        `https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-ultra-generate-preview-06-06:predict?key=${process.env.VITE_GEMINI_KEY}`,
         {
           instances: [
             {

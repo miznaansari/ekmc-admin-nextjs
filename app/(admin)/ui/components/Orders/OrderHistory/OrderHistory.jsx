@@ -33,8 +33,8 @@ import OrderDetailsModal from './OrderDetailsModal'; // Import the modal compone
 import { styled } from '@mui/system';
 import SearchIcon from "@mui/icons-material/Search"; // Corrected import
 import mapAdminAccess from "../../../mapAdminAccess.json"
-import { useLocation } from 'react-router-dom';
-const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+import { useLocation } from '@/ui/utils/nextRouting';
+const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
 
 // Styled container with responsive design
 const StyledContainer = styled(Box)(({ theme }) => ({
@@ -109,7 +109,7 @@ const OrderHistory = () => {
   const fetchOrders = async () => {
     try {
       const token = localStorage.getItem('authToken');
-      const response = await axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/orderhistory`, {
+      const response = await axios.get(`${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/orderhistory`, {
         params: { pageno: page, limits: rowsPerPage },
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -158,7 +158,7 @@ const OrderHistory = () => {
   const handleEditSubmit = async () => {
     try {
       const token = localStorage.getItem('authToken');
-      await axios.put(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/order-status/${selectedOrder.id}`, editData, {
+      await axios.put(`${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/order-status/${selectedOrder.id}`, editData, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setSnackbarSeverity('success');
@@ -176,7 +176,7 @@ const OrderHistory = () => {
   const handleDeleteSubmit = async () => {
     try {
       const token = localStorage.getItem('authToken');
-      await axios.put(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/delete-order`, {
+      await axios.put(`${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/delete-order`, {
         cafe_order_list_id: selectedOrder.id,
       }, {
         headers: { Authorization: `Bearer ${token}` },

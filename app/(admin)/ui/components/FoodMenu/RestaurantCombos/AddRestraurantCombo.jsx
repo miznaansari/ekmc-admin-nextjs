@@ -83,7 +83,7 @@ const AddRestaurantCombo = ({ open, handleClose,onSuccess }) => {
       try {
         const response = await axios.get(
           `${
-            import.meta.env.VITE_REACT_APP_BACKEND_URL
+            process.env.VITE_REACT_APP_BACKEND_URL
           }/api/user/admin/cafe-list/get/all`,
           {
             headers: {
@@ -111,7 +111,7 @@ const AddRestaurantCombo = ({ open, handleClose,onSuccess }) => {
     console.log("id in fetch menu items- ",selectedCafeIdforFetchItems)
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/search-menu-item`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/search-menu-item`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -174,7 +174,7 @@ const AddRestaurantCombo = ({ open, handleClose,onSuccess }) => {
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/cafe-combo`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/cafe-combo`,
         payload,
         {
           headers: {
@@ -229,7 +229,7 @@ const AddRestaurantCombo = ({ open, handleClose,onSuccess }) => {
     console.log("file is:",file)
     try{
       setUploading(true)
-      const response= await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/admin/cf/v1/upload`,formData,{
+      const response= await axios.post(`${process.env.VITE_REACT_APP_BACKEND_URL}/api/admin/cf/v1/upload`,formData,{
         headers:{
           Authorization:`Bearer ${token}`
         }

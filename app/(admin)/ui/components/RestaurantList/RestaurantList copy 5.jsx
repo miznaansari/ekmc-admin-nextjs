@@ -34,7 +34,7 @@ import {
   Dialog,
   Drawer,
 } from "@mui/material";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams } from "@/ui/utils/nextRouting";
 
 import { useTheme } from "@mui/system";
 import { useMediaQuery } from "@mui/material";
@@ -45,7 +45,7 @@ import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import EaterySearchHeader from "../v2/component/EaterySearchHeader";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/ui/utils/nextRouting";
 import useDebounce from "../../hooks/useDebounce";
 import ViewProfile from "../ViewProfile/ViewProfile";
 import EditRestaurantMain from "./EditResturant/EditRestaurantMain";
@@ -82,7 +82,7 @@ const RestaurantList = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const navigate = useNavigate();
   const token = localStorage.getItem("authToken");
-  const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
 
   /* ================= STATE ================= */
 

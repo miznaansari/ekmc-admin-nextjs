@@ -1,5 +1,4 @@
-import { 
-    Box, 
+import {Box, 
     Grid, 
     TextField,
     Button,
@@ -11,7 +10,6 @@ import {
     Stack,
     IconButton,
     CircularProgress,
-    Grid2,
     Snackbar,
     Alert,
     useMediaQuery,
@@ -22,8 +20,7 @@ import {
     DialogTitle,
     DialogContent,
     DialogActions,
-    DialogContentText
-} from "@mui/material";
+    DialogContentText} from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -56,7 +53,7 @@ const EditMilestone = ({ onSuccess, onCancel , id, onDelete}) => {
         }
     });
     
-    const baseurl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+    const baseurl = process.env.VITE_REACT_APP_BACKEND_URL;
     const token = localStorage.getItem("authToken");
     const [previewVideo, setPreviewVideo] = useState(null);
     const [uploading, setUploading] = useState(false);
@@ -390,9 +387,9 @@ const fetchMilestone = async() => {
                         pt: 2,
                         pb: 1
                     }}>
-                        <Grid2 container spacing={2}>
+                        <Grid container spacing={2}>
                             {/* Title */}
-                            <Grid2 xs={12} width={"100%"}>
+                            <Grid xs={12} width={"100%"}>
                                 <Controller
                                     control={control}
                                     name="title"
@@ -411,10 +408,10 @@ const fetchMilestone = async() => {
                                         />
                                     )}
                                 />
-                            </Grid2>
+                            </Grid>
 
                             {/* System Title */}
-                            <Grid2 xs={12} width={"100%"}>
+                            <Grid xs={12} width={"100%"}>
                                 <Controller
                                     control={control}
                                     name="system_title"
@@ -433,10 +430,10 @@ const fetchMilestone = async() => {
                                         />
                                     )}
                                 />
-                            </Grid2>
+                            </Grid>
 
                             {/* Eatcoins Offered */}
-                            <Grid2 xs={12} width={"100%"}>
+                            <Grid xs={12} width={"100%"}>
                                 <Controller
                                     control={control}
                                     name="eatcoins_offered"
@@ -460,10 +457,10 @@ const fetchMilestone = async() => {
                                         />
                                     )}
                                 />
-                            </Grid2>
+                            </Grid>
 
                             {/* Description */}
-                            <Grid2 xs={12} width={"100%"}>
+                            <Grid xs={12} width={"100%"}>
                                 <Controller
                                     control={control}
                                     name="description"
@@ -484,10 +481,10 @@ const fetchMilestone = async() => {
                                         />
                                     )}
                                 />
-                            </Grid2>
+                            </Grid>
 
                             {/* Internal Notes */}
-                            <Grid2 xs={12} width={"100%"}>
+                            <Grid xs={12} width={"100%"}>
                                 <Controller
                                     control={control}
                                     name="notes"
@@ -508,7 +505,7 @@ const fetchMilestone = async() => {
                                         />
                                     )}
                                 />
-                            </Grid2>
+                            </Grid>
 
                             {/* Add Contributions Section */}
                             <Grid width={"100%"} size={12}>
@@ -624,7 +621,7 @@ const fetchMilestone = async() => {
                             </Grid>
 
                             {/* Status Switch */}
-                            <Grid2 xs={12} width={"100%"}>
+                            <Grid xs={12} width={"100%"}>
                                 <Box sx={{ mt: 2, display: "flex", alignItems: "center" }}>
                                     <Typography variant="body1" mr={2}>
                                         Status:
@@ -646,8 +643,8 @@ const fetchMilestone = async() => {
                                         {watch("status") === 1 ? "Active" : "Inactive"}
                                     </Typography>
                                 </Box>
-                            </Grid2>
-                        </Grid2>
+                            </Grid>
+                        </Grid>
                     </Box>
 
                     {/* Footer Buttons - Fixed at bottom */}

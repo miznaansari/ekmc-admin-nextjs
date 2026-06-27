@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import {
-    Box,
+import {Box,
     TextField,
     Button,
     Typography,
@@ -11,15 +10,14 @@ import {
     Stack,
     IconButton,
     CircularProgress,
-    Grid2,
     Snackbar,
     Alert,
     useMediaQuery,
     useTheme,
     Slider,
     Switch,
-    FormControlLabel
-} from "@mui/material";
+    FormControlLabel,
+  Grid} from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -44,7 +42,7 @@ const AddEatshot = ({ onSuccess, onCancel }) => {
             is_test: false
         }
     });
-    const baseurl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+    const baseurl = process.env.VITE_REACT_APP_BACKEND_URL;
     const token = localStorage.getItem("authToken");
     const [previewVideo, setPreviewVideo] = useState(null);
     const [uploading, setUploading] = useState(false); // Track upload state
@@ -637,9 +635,9 @@ const AddEatshot = ({ onSuccess, onCancel }) => {
                         pt: 2,
                         pb: 1 // Add some bottom padding
                     }}>
-                        <Grid2 container spacing={2} sx={{ mb: 3 }}>
+                        <Grid container spacing={2} sx={{ mb: 3 }}>
                             {/* Video Section */}
-                            <Grid2 size={{ xs: 12, md: 6 }}>
+                            <Grid size={{ xs: 12, md: 6 }}>
                                 <Paper
                                     variant="outlined"
                                     onDragOver={handleDragOver}
@@ -712,10 +710,10 @@ const AddEatshot = ({ onSuccess, onCancel }) => {
                                         </IconButton>
                                     )}
                                 </Paper>
-                            </Grid2>
+                            </Grid>
 
                             {/* Thumbnail Section */}
-                            <Grid2 size={{ xs: 12, md: 6 }}>
+                            <Grid size={{ xs: 12, md: 6 }}>
                                 <Paper
                                     variant="outlined"
                                     sx={{
@@ -840,11 +838,11 @@ const AddEatshot = ({ onSuccess, onCancel }) => {
                                         </Box>
                                     )}
                                 </Paper>
-                            </Grid2>
-                        </Grid2>
+                            </Grid>
+                        </Grid>
 
-                        <Grid2 container spacing={2}>
-                            <Grid2 size={{ xs: 12, md: 6 }}>
+                        <Grid container spacing={2}>
+                            <Grid size={{ xs: 12, md: 6 }}>
                                 <Controller
                                     name="cafes"
                                     control={control}
@@ -874,9 +872,9 @@ const AddEatshot = ({ onSuccess, onCancel }) => {
                                         />
                                     )}
                                 />
-                            </Grid2>
+                            </Grid>
 
-                            <Grid2 size={{ xs: 12, md: 6 }}>
+                            <Grid size={{ xs: 12, md: 6 }}>
                                 <Controller
                                     name="tag_user"
                                     control={control}
@@ -913,9 +911,9 @@ const AddEatshot = ({ onSuccess, onCancel }) => {
                                         />
                                     )}
                                 />
-                            </Grid2>
+                            </Grid>
 
-                            <Grid2 size={{ xs: 12, md: 6 }}>
+                            <Grid size={{ xs: 12, md: 6 }}>
                                 <Controller
                                     name="author"
                                     control={control}
@@ -950,9 +948,9 @@ const AddEatshot = ({ onSuccess, onCancel }) => {
                                         />
                                     )}
                                 />
-                            </Grid2>
+                            </Grid>
 
-                            <Grid2 size={{ xs: 12, md: 6 }}>
+                            <Grid size={{ xs: 12, md: 6 }}>
                                 <Controller
                                     control={control}
                                     name="captions"
@@ -968,9 +966,9 @@ const AddEatshot = ({ onSuccess, onCancel }) => {
                                         />
                                     )}
                                 />
-                            </Grid2>
+                            </Grid>
 
-                            <Grid2 size={{ xs: 12, md: 12 }}>
+                            <Grid size={{ xs: 12, md: 12 }}>
                                 <Controller
                                     name="hasTags"
                                     control={control}
@@ -1029,9 +1027,9 @@ const AddEatshot = ({ onSuccess, onCancel }) => {
                                         </>
                                     )}
                                 />
-                            </Grid2>
+                            </Grid>
 
-                            <Grid2 size={{ xs: 12, md: 12 }}>
+                            <Grid size={{ xs: 12, md: 12 }}>
                                 <Controller
                                     name="is_test"
                                     control={control}
@@ -1049,8 +1047,8 @@ const AddEatshot = ({ onSuccess, onCancel }) => {
                                         />
                                     )}
                                 />
-                            </Grid2>
-                        </Grid2>
+                            </Grid>
+                        </Grid>
                     </Box>
 
                     {/* Footer Buttons - Fixed at bottom */}

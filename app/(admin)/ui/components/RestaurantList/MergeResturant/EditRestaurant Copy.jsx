@@ -1,5 +1,5 @@
 import { Grid, Typography } from "@mui/material"
-import { useLocation, useNavigate } from "react-router"
+import { useLocation, useNavigate } from "@/ui/utils/nextRouting"
 // import RestaurantSetting from "./RestaurantSetting"
 // import RestaurantDocuments from "./RestaurantDocuments"
 import { useSelector } from "react-redux"

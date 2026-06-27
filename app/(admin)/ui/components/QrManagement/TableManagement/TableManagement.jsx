@@ -42,7 +42,7 @@ import AddTableModal from './AddTableModal';
 import { styled } from '@mui/system';
 import SearchIcon from "@mui/icons-material/Search";
 import { Close } from '@mui/icons-material';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from '@/ui/utils/nextRouting';
 import mapAdminAccess from "../../../mapAdminAccess.json"
 const modalStyle = {
   position: 'absolute',
@@ -108,7 +108,7 @@ const TableManagement = () => {
   const [openViewModal, setOpenViewModal] = useState(false);
   const [qrDetails, setQrDetails] = useState([]);
   const [loading, setLoading] = useState(false);
-  const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const token = localStorage.getItem('authToken');
@@ -126,7 +126,7 @@ const TableManagement = () => {
   //fetch restaurants
   const fetchRestaurants = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/user/admin/cafe-list/get/all`, {
+      const response = await axios.get(`${process.env.VITE_REACT_APP_BACKEND_URL}/api/user/admin/cafe-list/get/all`, {
         headers: {
           Authorization: `Bearer ${token}`
         },

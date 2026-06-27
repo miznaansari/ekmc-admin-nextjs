@@ -21,7 +21,7 @@ export const startInitialSync = async () => {
     const token = localStorage.getItem("authToken");
 
     do {
-      const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+      const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
       const res = await fetch(
         `${baseUrl}/api/admin/v2/cafes?page=${page}&limit=10000`,
         {

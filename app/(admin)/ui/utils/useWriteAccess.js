@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/ui/utils/nextRouting";
 import mapAdminAccess from "../mapAdminAccess.json";
 
 export default function useWriteAccess() {

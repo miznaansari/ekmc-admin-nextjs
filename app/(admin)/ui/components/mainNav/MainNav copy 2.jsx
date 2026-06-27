@@ -11,7 +11,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Collapse from '@mui/material/Collapse';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from '@/ui/utils/nextRouting';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
@@ -55,7 +55,7 @@ import { Settings24Regular } from '@fluentui/react-icons';
 import { Circle12Regular } from '@fluentui/react-icons';
 import { ContentViewGallery24Regular } from '@fluentui/react-icons';
 import { Food24Regular } from '@fluentui/react-icons';
-import { version } from '../../../package.json'
+import { version } from '../../../../../package.json'
 import { RestaurantMenu } from '@mui/icons-material';
 
 const drawerWidth = 240;

@@ -25,7 +25,7 @@ const AddressInfo = ({cafeId}) => {
         message: ""
     });
     const [isOffline, setIsOffline] = useState(!navigator.onLine); 
-    const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL; 
+    const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL; 
     const token = localStorage.getItem("authToken");
     const [searchCityQuery, setSearchCityQuery] = useState("");
     const [cityOptions, setCityOptions] = useState([]);
@@ -35,7 +35,7 @@ const AddressInfo = ({cafeId}) => {
     const [initialPosition, setInitialPosition] = useState(null);
     const [initialFormValues, setInitialFormValues] = useState(null);
     const [isFormModified, setIsFormModified] = useState(false);
-    const OlaApiKey = import.meta.env.VITE_OLAMAP_API_KEY;
+    const OlaApiKey = process.env.VITE_OLAMAP_API_KEY;
     const resolvedMapContainerId = `map-edit-${cafeId}`;
 
     // Search location states

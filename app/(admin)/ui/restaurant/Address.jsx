@@ -3,7 +3,7 @@ import { Box, Grid, TextField, Typography, Button } from "@mui/material";
 import EditOptions from "./EditOptions";
 import Primary from "../../../Components/Button/Primary";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/ui/utils/nextRouting";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Spinner from "../../../Components/Progress/Spinner";

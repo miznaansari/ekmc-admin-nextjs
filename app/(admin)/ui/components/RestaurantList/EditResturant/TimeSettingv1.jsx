@@ -43,7 +43,7 @@ const TimeSetting = ({ cafeId }) => {
   });
 
   const [alert, setAlert] = useState({ open: false, severity: 'info', message: '' });
-  const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
   const token = localStorage.getItem("authToken");
   const [holidayDays, setHolidayDays] = useState({});
   const [isFormModified, setIsFormModified] = useState(false);

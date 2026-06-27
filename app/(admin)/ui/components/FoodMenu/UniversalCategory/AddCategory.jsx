@@ -39,7 +39,7 @@ const AddCategory = ({ onClose, drawerClosed ,onCancel}) => {
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [uploading, setUploading] = useState(false);
   const token = localStorage.getItem("authToken");
-  const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
   const theme= useTheme();
   const isMobileScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -200,7 +200,7 @@ const AddCategory = ({ onClose, drawerClosed ,onCancel}) => {
     try{
       setGeneratingImage(true)
       const response = await axios.post(
-      `https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-ultra-generate-preview-06-06:predict?key=${import.meta.env.VITE_GEMINI_KEY}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-ultra-generate-preview-06-06:predict?key=${process.env.VITE_GEMINI_KEY}`,
       {
         instances: [
           {

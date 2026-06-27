@@ -19,7 +19,7 @@ import 'leaflet/dist/leaflet.css';
 import statesCitiesData from '../../StatesCities/StatesCities.json'; // Import your JSON file
 
 const NOMINATIM_BASE_URL = "https://nominatim.openstreetmap.org/search?";
-const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL ;
+const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL ;
 
 const FindEateries = () => {
   const [states, setStates] = useState([]);

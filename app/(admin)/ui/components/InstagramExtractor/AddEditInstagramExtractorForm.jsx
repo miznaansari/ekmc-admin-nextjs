@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-    Drawer,
+import {Drawer,
     Box,
     TextField,
     Typography,
@@ -12,12 +11,10 @@ import {
     useTheme,
     useMediaQuery,
     Stack,
-    Grid2,
     Autocomplete,
     Snackbar,
     Alert,
-    Chip,
-} from "@mui/material";
+    Chip,} from "@mui/material";
 import instanceV1 from "../../restaurant/authaxios";
 import GlobalSnackbar from "../../utils/GlobalSnackbar";
 import { Close, Videocam, CloudUpload, Delete } from "@mui/icons-material";
@@ -285,7 +282,7 @@ const AddEditInstagramExtractorForm = ({
                 captions: ""
             }
         });
-    const baseurl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+    const baseurl = process.env.VITE_REACT_APP_BACKEND_URL;
     const token = localStorage.getItem("authToken");
     const [previewVideo, setPreviewVideo] = useState(null);
     const [uploading, setUploading] = useState(false); // Track upload state
@@ -1197,8 +1194,8 @@ const AddEditInstagramExtractorForm = ({
                                                 pb: 1 // Add some bottom padding
                                             }}>
 
-                                                <Grid2 container spacing={0}>
-                                                    <Grid2 xs={12} width={"100%"}>
+                                                <Grid container spacing={0}>
+                                                    <Grid xs={12} width={"100%"}>
                                                         <Controller
                                                             name="cafes"
                                                             control={control}
@@ -1228,9 +1225,9 @@ const AddEditInstagramExtractorForm = ({
                                                                 />
                                                             )}
                                                         />
-                                                    </Grid2>
+                                                    </Grid>
 
-                                                    <Grid2 xs={12} width={"100%"}>
+                                                    <Grid xs={12} width={"100%"}>
                                                         <Controller
                                                             name="tag_user"
                                                             control={control}
@@ -1267,9 +1264,9 @@ const AddEditInstagramExtractorForm = ({
                                                                 />
                                                             )}
                                                         />
-                                                    </Grid2>
+                                                    </Grid>
 
-                                                    <Grid2 xs={12} width={"100%"}>
+                                                    <Grid xs={12} width={"100%"}>
                                                         {/* <Controller
                                                         name="author"
                                                         control={control}
@@ -1304,9 +1301,9 @@ const AddEditInstagramExtractorForm = ({
                                                             />
                                                         )}
                                                     /> */}
-                                                    </Grid2>
+                                                    </Grid>
 
-                                                    <Grid2 xs={12} width={"100%"}>
+                                                    <Grid xs={12} width={"100%"}>
                                                         <Controller
                                                             control={control}
                                                             name="captions"
@@ -1323,9 +1320,9 @@ const AddEditInstagramExtractorForm = ({
                                                                 />
                                                             )}
                                                         />
-                                                    </Grid2>
+                                                    </Grid>
 
-                                                    <Grid2 xs={12} width={"100%"}>
+                                                    <Grid xs={12} width={"100%"}>
                                                         <Controller
                                                             name="hasTags"
                                                             control={control}
@@ -1384,8 +1381,8 @@ const AddEditInstagramExtractorForm = ({
                                                                 </>
                                                             )}
                                                         />
-                                                    </Grid2>
-                                                </Grid2>
+                                                    </Grid>
+                                                </Grid>
                                             </Box>
 
                                             {/* Footer Buttons - Fixed at bottom */}
@@ -1462,7 +1459,7 @@ const AddEditInstagramExtractorForm = ({
                                                     />
 
                                                     {/* Chips */}
-                                                    <Grid2 xs={12} mt={2}>
+                                                    <Grid xs={12} mt={2}>
                                                         <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
                                                             {rejectOptions.map((reason) => (
                                                                 <Chip
@@ -1479,7 +1476,7 @@ const AddEditInstagramExtractorForm = ({
                                                                 />
                                                             ))}
                                                         </Stack>
-                                                    </Grid2>
+                                                    </Grid>
                                                 </Grid>
                                             </Box>
 

@@ -1,5 +1,4 @@
-import {
-  Box,
+import {Box,
   Grid,
   TextField,
   Button,
@@ -11,7 +10,6 @@ import {
   Paper,
   Stack,
   IconButton,
-  Grid2,
   Snackbar,
   Alert,
   useMediaQuery,
@@ -19,8 +17,7 @@ import {
   Switch,
   FormControlLabel,
   Slider,
-  Skeleton
-} from "@mui/material";
+  Skeleton} from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -50,7 +47,7 @@ const EditEatshot = ({ onSuccess, content_id, onCancel, onApprove, eatshot }) =>
         is_test: false
       }
     });
-  const baseurl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseurl = process.env.VITE_REACT_APP_BACKEND_URL;
   const token = localStorage.getItem("authToken");
   const [previewVideo, setPreviewVideo] = useState(null);
   const [uploading, setUploading] = useState(false); // Track upload state
@@ -746,52 +743,52 @@ const EditEatshot = ({ onSuccess, content_id, onCancel, onApprove, eatshot }) =>
             pb: 1 // Add some bottom padding
           }}>
             {fetchingData ? (
-              <Grid2 container spacing={2}>
+              <Grid container spacing={2}>
                 {/* Video Section Skeleton */}
-                <Grid2 size={{ xs: 12, md: 6 }}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <Skeleton variant="rectangular" height={500} sx={{ borderRadius: '12px' }} />
-                </Grid2>
+                </Grid>
                 {/* Thumbnail Section Skeleton */}
-                <Grid2 size={{ xs: 12, md: 6 }}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <Skeleton variant="rectangular" height={500} sx={{ borderRadius: '12px' }} />
-                </Grid2>
+                </Grid>
 
                 {/* Tag Cafes Skeleton */}
-                <Grid2 size={{ xs: 12, md: 6 }}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <Skeleton variant="rectangular" height={40} sx={{ borderRadius: '4px', mb: 3 }} />
-                </Grid2>
+                </Grid>
                 {/* Tag User Skeleton */}
-                <Grid2 size={{ xs: 12, md: 6 }}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <Skeleton variant="rectangular" height={40} sx={{ borderRadius: '4px', mb: 3 }} />
-                </Grid2>
+                </Grid>
 
                 {/* Author Skeleton */}
-                <Grid2 size={{ xs: 12, md: 6 }}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <Skeleton variant="rectangular" height={40} sx={{ borderRadius: '4px', mb: 3 }} />
-                </Grid2>
+                </Grid>
                 {/* Caption Skeleton */}
-                <Grid2 size={{ xs: 12, md: 6 }}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <Skeleton variant="rectangular" height={40} sx={{ borderRadius: '4px', mb: 3 }} />
-                </Grid2>
+                </Grid>
 
                 {/* Hashtags Skeleton */}
-                <Grid2 size={{ xs: 12, md: 12 }}>
+                <Grid size={{ xs: 12, md: 12 }}>
                   <Skeleton variant="rectangular" height={40} sx={{ borderRadius: '4px', mb: 3 }} />
-                </Grid2>
+                </Grid>
 
                 {/* Approved/Deleted switches Skeleton */}
-                <Grid2 size={{ xs: 12, md: 12 }}>
+                <Grid size={{ xs: 12, md: 12 }}>
                   <Stack direction="row" spacing={3}>
                     <Skeleton variant="rectangular" width={120} height={30} sx={{ borderRadius: '4px' }} />
                     <Skeleton variant="rectangular" width={120} height={30} sx={{ borderRadius: '4px' }} />
                     <Skeleton variant="rectangular" width={120} height={30} sx={{ borderRadius: '4px' }} />
                   </Stack>
-                </Grid2>
-              </Grid2>
+                </Grid>
+              </Grid>
             ) : (
-              <Grid2 container spacing={2} sx={{ mb: 3 }}>
+              <Grid container spacing={2} sx={{ mb: 3 }}>
                 {/* Video Section */}
-                <Grid2 size={{ xs: 12, md: 6 }}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <Paper
                     variant="outlined"
                     onDragOver={handleDragOver}
@@ -853,10 +850,10 @@ const EditEatshot = ({ onSuccess, content_id, onCancel, onApprove, eatshot }) =>
 
 
                   </Paper>
-                </Grid2>
+                </Grid>
 
                 {/* Thumbnail Section */}
-                <Grid2 size={{ xs: 12, md: 6 }}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <Paper
                     variant="outlined"
                     sx={{
@@ -981,9 +978,9 @@ const EditEatshot = ({ onSuccess, content_id, onCancel, onApprove, eatshot }) =>
                       </Box>
                     )}
                   </Paper>
-                </Grid2>
+                </Grid>
 
-                <Grid2 size={{ xs: 12, md: 6 }}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <Controller
                     name="cafes"
                     control={control}
@@ -1013,9 +1010,9 @@ const EditEatshot = ({ onSuccess, content_id, onCancel, onApprove, eatshot }) =>
                       />
                     )}
                   />
-                </Grid2>
+                </Grid>
 
-                <Grid2 size={{ xs: 12, md: 6 }}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <Controller
                     name="tag_user"
                     control={control}
@@ -1045,9 +1042,9 @@ const EditEatshot = ({ onSuccess, content_id, onCancel, onApprove, eatshot }) =>
                       />
                     )}
                   />
-                </Grid2>
+                </Grid>
 
-                <Grid2 size={{ xs: 12, md: 6 }}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <Controller
                     name="author"
                     control={control}
@@ -1083,9 +1080,9 @@ const EditEatshot = ({ onSuccess, content_id, onCancel, onApprove, eatshot }) =>
                       />
                     )}
                   />
-                </Grid2>
+                </Grid>
 
-                <Grid2 size={{ xs: 12, md: 6 }}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <Controller
                     control={control}
                     name="captions"
@@ -1110,9 +1107,9 @@ const EditEatshot = ({ onSuccess, content_id, onCancel, onApprove, eatshot }) =>
                       />
                     )}
                   />
-                </Grid2>
+                </Grid>
 
-                <Grid2 size={{ xs: 12, md: 12 }}>
+                <Grid size={{ xs: 12, md: 12 }}>
                   <Controller
                     name="hasTags"
                     control={control}
@@ -1165,9 +1162,9 @@ const EditEatshot = ({ onSuccess, content_id, onCancel, onApprove, eatshot }) =>
                       </>
                     )}
                   />
-                </Grid2>
+                </Grid>
 
-                <Grid2 size={{ xs: 12, md: 12 }}>
+                <Grid size={{ xs: 12, md: 12 }}>
                   <Stack
                     direction="row"
                     spacing={3}
@@ -1228,8 +1225,8 @@ const EditEatshot = ({ onSuccess, content_id, onCancel, onApprove, eatshot }) =>
                       )}
                     />
                   </Stack>
-                </Grid2>
-              </Grid2>
+                </Grid>
+              </Grid>
             )}
           </Box>
 

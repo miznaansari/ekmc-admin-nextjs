@@ -32,7 +32,7 @@ import duration from "dayjs/plugin/duration";
 import AddBanner from "./AddBanner";
 import EditBanner from "./EditBanner";
 import mapAdminAccess from "../../../mapAdminAccess.json";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/ui/utils/nextRouting";
 import { formatUTCToLocal, FormattedDate } from "../../../utils/timeUtils";
 
 dayjs.extend(utc);
@@ -44,7 +44,7 @@ const ListBanners = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   const token = localStorage.getItem("authToken");
-  const baseurl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseurl = process.env.VITE_REACT_APP_BACKEND_URL;
 
   const [alert, setAlert] = useState({ open: false, severity: "info", message: "" });
   const [drawerOpen, setDrawerOpen] = useState(false);

@@ -22,7 +22,7 @@ const ExpandableTable = ({ cafeId }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
   const token = localStorage.getItem("authToken");
 
   /* ================= WIDTH (MOBILE ONLY) ================= */

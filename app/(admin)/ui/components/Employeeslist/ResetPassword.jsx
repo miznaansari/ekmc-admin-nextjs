@@ -9,7 +9,7 @@ export default function ResetPassword({employeeId, onClose, onSuccess}){
     const [newPassword, setNewPassword] = useState("");
     const [reEnterNewPassword, setReEnterNewPassword] = useState("");
     const token = localStorage.getItem("authToken");
-    const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+    const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
     const [updating, setUpdating] = useState(false);
 
     const [alert, setAlert] = useState({

@@ -3,7 +3,7 @@ import { Box, TextField, Paper, Typography, Button } from "@mui/material";
 import AIImageGenerationTable from "./AIImageGenerationTable.jsx";
 import AddEditAIImageGeneration from "./AddEditAIImageGeneration.jsx";
 import GlobalSnackbar from "../../utils/GlobalSnackbar.jsx";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/ui/utils/nextRouting";
 import mapAdminAccess from "../../mapAdminAccess.json"
 import AddEditAIVideoGeneration from "./AddEditAIVideoGeneration.jsx";
 import OptionImageOrVideo from "./OptionImageOrVideo.jsx";

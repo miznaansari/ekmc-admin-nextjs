@@ -39,7 +39,7 @@ const AddUniversalItem = ({ handleClose, onCancel }) => {
   const [aspectRatio] = useState(4 / 3);
   
   const token = localStorage.getItem('authToken');
-  const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
   const theme = useTheme();
   const isMobileScreen = useMediaQuery(theme.breakpoints.down('sm'));
 

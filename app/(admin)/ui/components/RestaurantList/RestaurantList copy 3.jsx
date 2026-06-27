@@ -38,7 +38,7 @@ import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import EaterySearchHeader from "../v2/component/EaterySearchHeader";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/ui/utils/nextRouting";
 import useDebounce from "../../hooks/useDebounce";
 import ViewProfile from "../ViewProfile/ViewProfile";
 import EditRestaurantMain from "./EditResturant/EditRestaurantMain";
@@ -65,7 +65,7 @@ const RestaurantList = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const navigate = useNavigate();
   const token = localStorage.getItem("authToken");
-  const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
 
   /* ================= STATE ================= */
 

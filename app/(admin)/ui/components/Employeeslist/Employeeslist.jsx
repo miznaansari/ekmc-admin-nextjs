@@ -46,7 +46,7 @@ import AddEmployees from "../AddEmployees/AddEmployees";
 import ViewEmployeeProfile from "../ViewEmployeeProfile/ViewEmployeeProfile";
 import EditEmployeeProfile from "../EditEmployeeprofile/EditEmployeeprofile.jsx";
 import RightDrawer from "../RightDrawer/RightDrawer.jsx"; // Import the RightDrawer component
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/ui/utils/nextRouting";
 import useDebounce from "../../hooks/useDebounce.jsx";
 import ViewColumnIcon from "@mui/icons-material/ViewColumn";
 import ResetPassword from "./ResetPassword.jsx";
@@ -184,7 +184,7 @@ const EmployeesList = () => {
   const [showEditProfile, setShowEditProfile] = useState(false);
   const [selectedEmployeeId, setSelectedEmployeeId] = useState(null);
   const token = localStorage.getItem("authToken");
-  const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
   const navigate = useNavigate();
   const [snackbar, setSnackbar] = useState({
     open: false,
@@ -425,7 +425,7 @@ const EmployeesList = () => {
   //fetch restaurants
   const fetchRestaurants = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/user/admin/cafe-list/get/all`, {
+      const response = await axios.get(`${process.env.VITE_REACT_APP_BACKEND_URL}/api/user/admin/cafe-list/get/all`, {
         headers: {
           Authorization: `Bearer ${token}`
         },

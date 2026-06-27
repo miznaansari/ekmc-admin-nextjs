@@ -35,7 +35,7 @@ const AddressInfo = () => {
   const [isOffline, setIsOffline] = useState(!navigator.onLine);
 
   const [position, setPosition] = useState(null);
-  const OlaApiKey = import.meta.env.VITE_OLAMAP_API_KEY;
+  const OlaApiKey = process.env.VITE_OLAMAP_API_KEY;
 
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);

@@ -44,7 +44,7 @@ const ReviewHistory = ({ customer, onBack }) => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/admin/customer/order-review/get/all`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/admin/customer/order-review/get/all`,
         {
           params: {
             userId: customer.user_customer_id,
@@ -102,7 +102,7 @@ const ReviewHistory = ({ customer, onBack }) => {
     try {
       console.log("review id",reviewId)
       const response = await axios.get(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/order-review/${reviewId}`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/order-review/${reviewId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -135,7 +135,7 @@ const ReviewHistory = ({ customer, onBack }) => {
       console.log("selected in edit save uid:",selectedReview)
       console.log("selected uid= ",selectedReview.order_review_id)
       const response = await axios.put(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/edit-review/${selectedReview.order_review_id}`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/edit-review/${selectedReview.order_review_id}`,
         {
           experience_rating: selectedReview.experience_rating,
           review_detail: selectedReview.review_detail,

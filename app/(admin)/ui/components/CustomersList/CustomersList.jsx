@@ -36,7 +36,7 @@ import {
 } from "@mui/material";
 import { fontWeight, styled, useTheme } from "@mui/system";
 import { useMediaQuery } from "@mui/material";
-import { useLocation } from "react-router";
+import { useLocation } from "@/ui/utils/nextRouting";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { MoreVertical24Filled } from "@fluentui/react-icons";
 import Search from "@mui/icons-material/Search";
@@ -49,7 +49,7 @@ import EditProfileUser from "../EditProfileUser/EditProfileUser";
 import ReviewHistory from "../ReviewHistory/ReviewHistory";
 import { Drawer } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/ui/utils/nextRouting";
 import useDebounce from "../../hooks/useDebounce";
 import ViewColumnIcon from "@mui/icons-material/ViewColumn";
 import SearchIcon from "@mui/icons-material/Search"; // Corrected import
@@ -201,7 +201,7 @@ const CustomersListPage = () => {
   const [drawerContent, setDrawerContent] = useState(null); // Holds the content to be rendered in the drawer
   const navigate = useNavigate();
   const token = localStorage.getItem("authToken");
-  const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
   const [alert, setAlert] = useState({
     open: false,
     severity: "info",

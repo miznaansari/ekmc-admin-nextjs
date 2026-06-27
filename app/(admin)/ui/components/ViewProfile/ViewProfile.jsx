@@ -37,7 +37,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import axios from "axios";
 import Slider from "react-slick";
 import { DrawerContext } from "../../context/DrawerContext";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "@/ui/utils/nextRouting";
 
 const ProgressiveImage = ({ img, alt, sx = {} }) => {
   const lowRes = img.gallery_cf_240px_image_url || img.gallery_cf_360px_image_url || img.gallery_cf_480px_image_url;
@@ -170,7 +170,7 @@ const ViewProfile = ({ onClose }) => {
 
   const paginatedEmployees = employees.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage);
 
-  const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
 
   /* =========================
      FETCH DATA

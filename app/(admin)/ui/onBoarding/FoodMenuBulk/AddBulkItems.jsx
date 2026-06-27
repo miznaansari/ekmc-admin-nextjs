@@ -34,7 +34,7 @@ function useDebounce(value, delay = 300) {
 
 export default function AddBulkItems() {
   const token = localStorage.getItem("authToken");
-  const baseurl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseurl = process.env.VITE_REACT_APP_BACKEND_URL;
 
   // 🔹 State
   const [selectedRestaurant, setSelectedRestaurant] = useState(localStorage.getItem("cafeListId") ? { value: localStorage.getItem("cafeListId") } : null);
@@ -76,7 +76,7 @@ export default function AddBulkItems() {
       try {
         setLoading(true);
         const res = await axios.post(
-          import.meta.env.VITE_IMAGE_TO_FORMATED_DATA_CONVERTER_URL,
+          process.env.VITE_IMAGE_TO_FORMATED_DATA_CONVERTER_URL,
           formData
         );
         const rawItems = res.data?.output?.data || [];

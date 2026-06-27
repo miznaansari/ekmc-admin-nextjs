@@ -2,6 +2,7 @@
   "compilerOptions": {
     "paths": {
       "@/*": ["./*"],
+      "@/ui/*": ["./app/(admin)/ui/*"],
       "@/components/*": ["./app/(admin)/ui/components/*"],
       "@/context/*": ["./app/(admin)/ui/context/*"],
       "@/theme/*": ["./app/(admin)/ui/theme/*"],

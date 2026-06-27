@@ -41,7 +41,7 @@ import useDebounce from "../../../hooks/useDebounce";
 import RightDrawer from "../../RightDrawer/RightDrawer";
 import SearchIcon from "@mui/icons-material/Search"; // Corrected import
 import { Checkmark24Regular, MoreVertical24Filled } from "@fluentui/react-icons";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/ui/utils/nextRouting";
 import mapAdminAccess from "../../../mapAdminAccess.json"
 const iconBoxStyle = {
   width: 24,
@@ -164,7 +164,7 @@ const UniversalItem = () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/universal-item`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/universal-item`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -242,7 +242,7 @@ const UniversalItem = () => {
     }
 
     try{
-      const response= await axios.put(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/universal-item/${item.id}`,payload,{
+      const response= await axios.put(`${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/universal-item/${item.id}`,payload,{
         headers:{
           Authorization:`Bearer ${token}`
         }

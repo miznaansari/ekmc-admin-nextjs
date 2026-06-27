@@ -8,8 +8,8 @@ export default function MapComponent() {
   const containerRef = useRef(null);
   const [zoomLevel, setZoomLevel] = useState(10);
 
-  const olamapKey = import.meta.env.VITE_OLAMAP_API_KEY;
-  const olamapProjectKey = import.meta.env.VITE_OLAMAP_PROJECT_KEY;
+  const olamapKey = process.env.VITE_OLAMAP_API_KEY;
+  const olamapProjectKey = process.env.VITE_OLAMAP_PROJECT_KEY;
 
   // 🔥 ONE-TIME LOAD FROM DB INTO GEOJSON
   const loadDataToGeoJSON = async (map) => {

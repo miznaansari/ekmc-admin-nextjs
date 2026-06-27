@@ -3,7 +3,7 @@ import { Box, Checkbox, Grid, InputLabel, Typography, Snackbar, Alert } from "@m
 import EditOptions from "./EditOptions";
 import Primary from "./Primary";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/ui/utils/nextRouting";
 import MenuEditProfile from "./MenuEditProfile";
 import Spinner from "./Spinner";
 // import ErrorText from "../../../Components/ErrorText";

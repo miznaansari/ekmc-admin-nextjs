@@ -1,5 +1,4 @@
-import { 
-    Box, 
+import {Box, 
     Grid, 
     TextField,
     Button,
@@ -11,7 +10,6 @@ import {
     Stack,
     IconButton,
     CircularProgress,
-    Grid2,
     Snackbar,
     Alert,
     useMediaQuery,
@@ -22,9 +20,7 @@ import {
     DialogTitle,
     DialogContent,
     DialogActions,
-    DialogContentText
-    
- } from "@mui/material";
+    DialogContentText} from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -53,7 +49,7 @@ const EditContribution= ({onSuccess, onCancel, id, onDelete})=>{
                 notes: ""
             }
         });
-    const baseurl= import.meta.env.VITE_REACT_APP_BACKEND_URL;
+    const baseurl= process.env.VITE_REACT_APP_BACKEND_URL;
     const token= localStorage.getItem("authToken");
     const [previewVideo, setPreviewVideo]=useState(null);
     const [uploading, setUploading] = useState(false); // Track upload state
@@ -322,7 +318,7 @@ const EditContribution= ({onSuccess, onCancel, id, onDelete})=>{
         try{
             setGeneratingImage(true)
             const response = await axios.post(
-            `https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-ultra-generate-preview-06-06:predict?key=${import.meta.env.VITE_GEMINI_KEY}`,
+            `https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-ultra-generate-preview-06-06:predict?key=${process.env.VITE_GEMINI_KEY}`,
             {
                 instances: [
                 {
@@ -567,10 +563,10 @@ const EditContribution= ({onSuccess, onCancel, id, onDelete})=>{
                             </Stack>
                         </Box>
 
-                        <Grid2 container spacing={2}>
+                        <Grid container spacing={2}>
                             
 
-                            <Grid2 xs={12} width={"100%"}>
+                            <Grid xs={12} width={"100%"}>
                                 <Controller
                                     control={control}
                                     name="title"
@@ -585,9 +581,9 @@ const EditContribution= ({onSuccess, onCancel, id, onDelete})=>{
                                         />
                                     )}
                                 />
-                            </Grid2>
+                            </Grid>
 
-                            <Grid2 xs={12} width={"100%"}>
+                            <Grid xs={12} width={"100%"}>
                                 <Controller
                                     control={control}
                                     name="system_title"
@@ -602,9 +598,9 @@ const EditContribution= ({onSuccess, onCancel, id, onDelete})=>{
                                         />
                                     )}
                                 />
-                            </Grid2>
+                            </Grid>
 
-                            <Grid2 xs={12} width={"100%"}>
+                            <Grid xs={12} width={"100%"}>
                                 <Controller
                                     control={control}
                                     name="eatcoins_offered"
@@ -621,9 +617,9 @@ const EditContribution= ({onSuccess, onCancel, id, onDelete})=>{
                                         />
                                     )}
                                 />
-                            </Grid2>
+                            </Grid>
 
-                            <Grid2 xs={12} width={"100%"}>
+                            <Grid xs={12} width={"100%"}>
                                 <Controller
                                     control={control}
                                     name="description"
@@ -638,9 +634,9 @@ const EditContribution= ({onSuccess, onCancel, id, onDelete})=>{
                                         />
                                     )}
                                 />
-                            </Grid2>
+                            </Grid>
 
-                            <Grid2 xs={12} width={"100%"}>
+                            <Grid xs={12} width={"100%"}>
                                 <Controller
                                     control={control}
                                     name="notes"
@@ -655,9 +651,9 @@ const EditContribution= ({onSuccess, onCancel, id, onDelete})=>{
                                         />
                                     )}
                                 />
-                            </Grid2>
+                            </Grid>
 
-                            <Grid2 xs={12} width={"100%"}>
+                            <Grid xs={12} width={"100%"}>
                                 <Box display="flex" alignItems="center">
                                     <Typography variant="body1" mr={2}>
                                         Status:
@@ -679,9 +675,9 @@ const EditContribution= ({onSuccess, onCancel, id, onDelete})=>{
                                         {watch("status") === 1 ? "Active" : "Inactive"}
                                     </Typography>
                                 </Box>
-                            </Grid2>
+                            </Grid>
 
-                        </Grid2>
+                        </Grid>
                     </Box>
 
                     {/* Footer Buttons - Fixed at bottom */}

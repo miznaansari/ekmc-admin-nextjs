@@ -4,7 +4,7 @@ import NotificationTriggerTable from "./NotificationTempleteTable.jsx";
 import AddEditTemplateForm from "./AddEditTemplateForm.jsx";
 import GlobalSnackbar from "../../../utils/GlobalSnackbar.jsx";
 import mapAdminAccess from "../../../mapAdminAccess.json"
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/ui/utils/nextRouting";
 const NotificationTemplete = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [openDrawer, setOpenDrawer] = useState(false);

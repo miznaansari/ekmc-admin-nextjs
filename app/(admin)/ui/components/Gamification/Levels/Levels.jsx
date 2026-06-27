@@ -31,7 +31,7 @@ import axios from "axios";
 import { MoreVertical24Filled } from "@fluentui/react-icons";
 import AddLevel from "./AddLevel";
 import EditLevel from "./EditLevel";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/ui/utils/nextRouting";
 import mapAdminAccess from "../../../mapAdminAccess.json"
 
 const StyledTableContainer = styled(TableContainer)(({ theme }) => ({
@@ -71,7 +71,7 @@ export default function Levels(){
               });
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
     const token= localStorage.getItem("authToken");
-    const baseurl= import.meta.env.VITE_REACT_APP_BACKEND_URL;
+    const baseurl= process.env.VITE_REACT_APP_BACKEND_URL;
     const [levels, setLevels]=useState([]);
     const [drawerOpen, setDrawerOpen]=useState(false);
     const [drawerContent, setDrawerContent]= useState(null);

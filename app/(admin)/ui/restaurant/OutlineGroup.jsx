@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Button, ButtonGroup, Box } from "@mui/material";
 import  { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router";
+import { useNavigate, useLocation } from "@/ui/utils/nextRouting";
 
 const OutlineGroup = (props) => {
   const { arr } = props;

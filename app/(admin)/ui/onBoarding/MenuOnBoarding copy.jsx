@@ -14,7 +14,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Box } from '@mui/system';
 import React, { useState } from 'react';
 import { useTheme } from '@mui/material/styles';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@/ui/utils/nextRouting';
 import {
     AddSquare24Regular,
     Checkmark20Regular,

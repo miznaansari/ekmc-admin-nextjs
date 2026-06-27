@@ -29,10 +29,10 @@ import RefreshIcon from '@mui/icons-material/Refresh';
 import Pagination from '@mui/material/Pagination';
 import SearchIcon from "@mui/icons-material/Search"; // Corrected import
 import { MoreVertical24Filled } from '@fluentui/react-icons';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from '@/ui/utils/nextRouting';
 import mapAdminAccess from "../../../mapAdminAccess.json"
 
-const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
 
 const SlideInBox = styled(Box)(({ theme }) => ({
   animation: `slideIn 0.5s ease-out`,
@@ -137,7 +137,7 @@ const LiveOrder = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/live-orders?limits=${rowsPerPage}&pageno=${page}`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/live-orders?limits=${rowsPerPage}&pageno=${page}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -178,7 +178,7 @@ const LiveOrder = () => {
   const handleEditSubmit = async () => {
     try {
       const response = await axios.put(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/order-status/${selectedOrder.id}`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/order-status/${selectedOrder.id}`,
         {
           status,
           served_by: servedBy,

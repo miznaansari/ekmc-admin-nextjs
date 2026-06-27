@@ -72,7 +72,7 @@ const ImageGallery = ({ cafeId }) => {
     const [pendingFile, setPendingFile] = useState(null); // Store the original file for upload after crop
 
     const [isUploading, setIsUploading] = useState(false);
-    const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+    const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
     const token = localStorage.getItem('authToken')
 
     const [alert, setAlert] = useState({

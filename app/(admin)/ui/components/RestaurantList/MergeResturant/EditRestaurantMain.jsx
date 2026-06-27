@@ -34,7 +34,7 @@ import { Close } from "@mui/icons-material";
 
 const EditRestaurantMain = ({ cafeId, onClose, mergeCafe1 = null, mergeCafe2 = null }) => {
   const { setCafeIdContext, cafeIdContext } = useCafe();
-  const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
   const token = localStorage.getItem("authToken");
   const isMergeMode = Boolean(mergeCafe1 && mergeCafe2);
 

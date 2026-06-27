@@ -13,7 +13,7 @@ import {
 import ReleasedLogTable from "./ReleasedLogTable.jsx";
 import AddEditReleasedLogForm from "./AddEditReleasedLogForm.jsx";
 import GlobalSnackbar from "../../utils/GlobalSnackbar.jsx";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/ui/utils/nextRouting";
 import mapAdminAccess from "../../mapAdminAccess.json";
 
 const ReleasedLog = () => {

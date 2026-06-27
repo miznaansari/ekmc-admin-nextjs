@@ -21,7 +21,7 @@ export default function UniversalItem({
   }, [value])
 
   const token = localStorage.getItem("authToken");
-  const baseurl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseurl = process.env.VITE_REACT_APP_BACKEND_URL;
   useEffect(() => {
     const fetchItems = async () => {
       if (!debouncedSearch) {

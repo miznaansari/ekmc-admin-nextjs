@@ -3,7 +3,7 @@ import { Box, Typography, Grid } from "@mui/material";
 import EditOptions from "./EditOptions";
 import Icon from "../../../assets/Icon";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/ui/utils/nextRouting";
 import instanceV1 from "../../../api/axiosInstance";
 import { useSelector } from "react-redux";
 import Toast from "../../../Components/Toast";

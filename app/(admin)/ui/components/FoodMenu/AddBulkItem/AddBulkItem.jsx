@@ -9,7 +9,7 @@ export default function AddBulkItem(){
     const [loading , setLoading]=useState(false);
     const [menuItems, setMenuItems] = useState([]);
     const token = localStorage.getItem('authToken');
-    const baseurl= import.meta.env.VITE_REACT_APP_BACKEND_URL;
+    const baseurl= process.env.VITE_REACT_APP_BACKEND_URL;
     const [searchQuery, setSearchQuery]=useState("");
     const [searchUnibersalCategory, setSearchUniversalCategory]=useState("");
     const [universalCategories, setUniversalCategories]=useState([]);
@@ -112,7 +112,7 @@ export default function AddBulkItem(){
 
         try {
             setLoading(true)
-            const response = await axios.post(`${import.meta.env.VITE_IMAGE_TO_FORMATED_DATA_CONVERTER_URL}`, formData)
+            const response = await axios.post(`${process.env.VITE_IMAGE_TO_FORMATED_DATA_CONVERTER_URL}`, formData)
             
             console.log("response of upload image- ", response);
             

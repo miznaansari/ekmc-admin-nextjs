@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet } from "@/ui/utils/nextRouting";
 import MainNav from "./components/mainNav/MainNav";
 import { Box, CssBaseline, Grid } from "@mui/material";
 import { useContext } from "react";

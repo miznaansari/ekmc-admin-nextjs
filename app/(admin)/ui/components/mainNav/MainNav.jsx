@@ -17,7 +17,7 @@ import {
 import { styled, useTheme } from "@mui/material/styles";
 import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar from "@mui/material/AppBar";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "@/ui/utils/nextRouting";
 import {
   ExpandLess as ExpandLessIcon,
   ExpandMore as ExpandMoreIcon,
@@ -44,7 +44,7 @@ import {
 } from "@fluentui/react-icons";
 
 import { RestaurantMenu } from "@mui/icons-material";
-import pkg from "../../../package.json";
+import pkg from "../../../../../package.json";
 const { version } = pkg;
 import { MenuSvg } from "@/assets/icon/menuSvg";
 import { EatCollapse, Eats } from "@/assets/icon/Eats";

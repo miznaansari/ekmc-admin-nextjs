@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  Box,
+import {Box,
   Button,
   TextField,
   Typography,
@@ -14,13 +13,12 @@ import {
   Snackbar,
   Paper,
   Stack,
-  Grid2,
   Autocomplete,
   Alert,
   CircularProgress,
   useMediaQuery,
   useTheme,
-} from "@mui/material";
+  Grid} from "@mui/material";
 import { Close } from "@mui/icons-material";
 import { CloudArrowUp16Regular, Delete16Regular, Image32Regular } from "@fluentui/react-icons";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
@@ -69,7 +67,7 @@ const AddCustomers = ({ onSuccess, onClose }) => {
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [success, setSuccess] = useState(false);
   const token = localStorage.getItem("authToken");
-  const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
   const [cityList, setCityList] = useState([]);
   const [citySearchQuery, setCitySearchQuery] = useState("");
   const [switchButton, setSwitchbutton] = useState(true);
@@ -289,8 +287,8 @@ const AddCustomers = ({ onSuccess, onClose }) => {
 
             {/* Form Fields */}
             <Typography variant="h6" mb={2}>User details</Typography>
-            <Grid2 container spacing={2}>
-              <Grid2 xs={12} width={"100%"}>
+            <Grid container spacing={2}>
+              <Grid xs={12} width={"100%"}>
                 <Controller
                   name="first_name"
                   control={control}
@@ -307,9 +305,9 @@ const AddCustomers = ({ onSuccess, onClose }) => {
                     />
                   )}
                 />
-              </Grid2>
+              </Grid>
 
-              <Grid2 xs={12} width={"100%"}>
+              <Grid xs={12} width={"100%"}>
                 <Controller
                   name="last_name"
                   control={control}
@@ -326,8 +324,8 @@ const AddCustomers = ({ onSuccess, onClose }) => {
                     />
                   )}
                 />
-              </Grid2>
-                <Grid2 xs={12} width={"100%"}>
+              </Grid>
+                <Grid xs={12} width={"100%"}>
                 <Controller
                   name="bio"
                   control={control}
@@ -344,9 +342,9 @@ const AddCustomers = ({ onSuccess, onClose }) => {
                     />
                   )}
                 />
-              </Grid2>
+              </Grid>
 
-              <Grid2 xs={12} width={"100%"}>
+              <Grid xs={12} width={"100%"}>
                 <Controller
                   name="mobile_number"
                   control={control}
@@ -365,9 +363,9 @@ const AddCustomers = ({ onSuccess, onClose }) => {
 
                   )}
                 />
-              </Grid2>
+              </Grid>
 
-              <Grid2 xs={12} width={"100%"}>
+              <Grid xs={12} width={"100%"}>
                 <Controller
                   name="email"
                   control={control}
@@ -384,9 +382,9 @@ const AddCustomers = ({ onSuccess, onClose }) => {
                     />
                   )}
                 />
-              </Grid2>
+              </Grid>
 
-              <Grid2 xs={12} width={"100%"}>
+              <Grid xs={12} width={"100%"}>
                 <Controller
                   name="gender"
                   control={control}
@@ -411,9 +409,9 @@ const AddCustomers = ({ onSuccess, onClose }) => {
                     </FormControl>
                   )}
                 />
-              </Grid2>
+              </Grid>
 
-              <Grid2 xs={12} width={"100%"}>
+              <Grid xs={12} width={"100%"}>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <Controller
                     name="date_of_birth"
@@ -438,9 +436,9 @@ const AddCustomers = ({ onSuccess, onClose }) => {
                     )}
                   />
                 </LocalizationProvider>
-              </Grid2>
+              </Grid>
 
-              <Grid2 xs={12} width={"100%"}>
+              <Grid xs={12} width={"100%"}>
                 <Controller
                   name="city"
                   control={control}
@@ -488,9 +486,9 @@ const AddCustomers = ({ onSuccess, onClose }) => {
 
                   )}
                 />
-              </Grid2>
+              </Grid>
 
-              <Grid2 xs={12} width={"100%"} mb={4}>
+              <Grid xs={12} width={"100%"} mb={4}>
                 <Box sx={{ display: "flex", alignItems: "center" }}>
                   <Switch
                     color="secondary"
@@ -500,8 +498,8 @@ const AddCustomers = ({ onSuccess, onClose }) => {
                   />
                   <Typography sx={{ pr: 2 }}>Active</Typography>
                 </Box>
-              </Grid2>
-            </Grid2>
+              </Grid>
+            </Grid>
           </Box>
         </Paper>
 

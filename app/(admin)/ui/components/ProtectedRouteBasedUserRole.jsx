@@ -1,6 +1,6 @@
 // src/components/ProtectedRouteBasedUserRole.jsx
 import React from "react";
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "@/ui/utils/nextRouting";
 
 const ProtectedRouteBasedUserRole = ({ allowedRoles, userRole }) => {
   console.log('allowedRoles', allowedRoles)

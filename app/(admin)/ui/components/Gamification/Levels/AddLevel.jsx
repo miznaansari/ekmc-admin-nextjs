@@ -1,6 +1,5 @@
 
-import { 
-    Box, 
+import {Box, 
     Grid, 
     TextField,
     Button,
@@ -12,7 +11,6 @@ import {
     Stack,
     IconButton,
     CircularProgress,
-    Grid2,
     Snackbar,
     Alert,
     useMediaQuery,
@@ -20,9 +18,7 @@ import {
     Avatar,
     Switch,
     FormControlLabel,
-    Checkbox
-    
- } from "@mui/material";
+    Checkbox} from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -53,7 +49,7 @@ const AddLevel= ({onSuccess, onCancel})=>{
         }
     });
     
-    const baseurl= import.meta.env.VITE_REACT_APP_BACKEND_URL;
+    const baseurl= process.env.VITE_REACT_APP_BACKEND_URL;
     const token= localStorage.getItem("authToken");
     const [loading, setLoading]=useState(false);
     const theme= useTheme();
@@ -166,8 +162,8 @@ const AddLevel= ({onSuccess, onCancel})=>{
                     }}>
                         
 
-                        <Grid2 container spacing={2}>
-                            <Grid2 xs={12} width={"100%"}>
+                        <Grid container spacing={2}>
+                            <Grid xs={12} width={"100%"}>
                                 <Controller
                                     control={control}
                                     name="level_id"
@@ -186,9 +182,9 @@ const AddLevel= ({onSuccess, onCancel})=>{
                                         />
                                     )}
                                 />
-                            </Grid2>
+                            </Grid>
 
-                            <Grid2 xs={12} width={"100%"}>
+                            <Grid xs={12} width={"100%"}>
                                 <Controller
                                     control={control}
                                     name="starting_point"
@@ -207,9 +203,9 @@ const AddLevel= ({onSuccess, onCancel})=>{
                                         />
                                     )}
                                 />
-                            </Grid2>
+                            </Grid>
 
-                            <Grid2 xs={12} width={"100%"}>
+                            <Grid xs={12} width={"100%"}>
                                 <Controller
                                     control={control}
                                     name="ending_point"
@@ -229,9 +225,9 @@ const AddLevel= ({onSuccess, onCancel})=>{
                                         />
                                     )}
                                 />
-                            </Grid2>
+                            </Grid>
 
-                            <Grid2 xs={12} width={"100%"}>
+                            <Grid xs={12} width={"100%"}>
                                 <Controller
                                     control={control}
                                     name="internal_note"
@@ -255,7 +251,7 @@ const AddLevel= ({onSuccess, onCancel})=>{
                                         />
                                     )}
                                 />
-                            </Grid2>
+                            </Grid>
 
                             
                             <Grid size={12}>
@@ -307,7 +303,7 @@ const AddLevel= ({onSuccess, onCancel})=>{
                             </Grid>
                             
                             {/* custom message */}
-                            <Grid2 xs={12} width={"100%"}>
+                            <Grid xs={12} width={"100%"}>
                                 <Controller
                                     control={control}
                                     name="custom_message"
@@ -329,10 +325,10 @@ const AddLevel= ({onSuccess, onCancel})=>{
                                         />
                                     )}
                                 />
-                            </Grid2>
+                            </Grid>
                             
 
-                            <Grid2 xs={12} width={"100%"}>
+                            <Grid xs={12} width={"100%"}>
                                 <Box sx={{ display: "flex", alignItems: "center" }}>
                                     <Typography variant="body1" mr={2}>
                                         Status:
@@ -354,8 +350,8 @@ const AddLevel= ({onSuccess, onCancel})=>{
                                         {watch("status") === 1 ? "Active" : "Inactive"}
                                     </Typography>
                                 </Box>
-                            </Grid2>
-                        </Grid2>
+                            </Grid>
+                        </Grid>
                     </Box>
 
                     {/* Footer Buttons - Fixed at bottom */}

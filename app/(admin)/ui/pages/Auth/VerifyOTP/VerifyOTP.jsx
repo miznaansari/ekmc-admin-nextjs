@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TextField, Button, Typography, Box, Card, useTheme } from '@mui/material';
 import authService from '../../../services/authService';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@/ui/utils/nextRouting';
 // import Logo from '../../assets/logo.png'; 
 
 const VerifyOTP = () => {

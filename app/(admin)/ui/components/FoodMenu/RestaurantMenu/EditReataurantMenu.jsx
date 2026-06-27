@@ -56,7 +56,7 @@ const EditRestaurantMenu = ({ open, onClose, cafeItemId, onCancel }) => {
   const [loading, setLoading] = useState(false);
   const [cafes, setCafes] = useState([]);
   const [menuItems, setMenuItems] = useState([]);
-  const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
   const token = localStorage.getItem('authToken');
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const [previewImage, setPreviewImage] = useState('');

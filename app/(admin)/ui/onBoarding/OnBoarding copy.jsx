@@ -5,7 +5,7 @@ import {
    Box,
 
 } from "@mui/material";
-import { Route, Routes, useLocation, useNavigate, useParams } from "react-router";
+import { Route, Routes, useLocation, useNavigate, useParams } from "@/ui/utils/nextRouting";
 import { useState, useRef } from "react";
 
 

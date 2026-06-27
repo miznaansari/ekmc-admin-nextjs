@@ -82,21 +82,21 @@ const AddRestaurantMenu = ({ open, onClose ,onSuccess}) => {
   
 
   const token = localStorage.getItem('authToken');
-  const baseurl= import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseurl= process.env.VITE_REACT_APP_BACKEND_URL;
   useEffect(() => {
     const fetchData = async () => {
       try {
         const [cafesRes, categoriesRes, universalCategoriesRes, menuItemsRes] = await Promise.all([
-          // axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/user/admin/cafe-list/get/all`, {
+          // axios.get(`${process.env.VITE_REACT_APP_BACKEND_URL}/api/user/admin/cafe-list/get/all`, {
           //   headers: { Authorization: `Bearer ${token}` }
           // }),
-          axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/search-cat`, {
+          axios.get(`${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/search-cat`, {
             headers: { Authorization: `Bearer ${token}` }
           }),
-          // axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/universal-categories?pageno=1&limits=1000`, {
+          // axios.get(`${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/universal-categories?pageno=1&limits=1000`, {
           //   headers: { Authorization: `Bearer ${token}` }
           // }),
-          // axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/search-item`, {
+          // axios.get(`${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/search-item`, {
           //   headers: { Authorization: `Bearer ${token}` }
           // })  
         ]);
@@ -154,7 +154,7 @@ const AddRestaurantMenu = ({ open, onClose ,onSuccess}) => {
     setLoading(true);
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/cafe-menu-item`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/cafe-menu-item`,
         payload,
         { headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' } }
       );

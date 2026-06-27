@@ -52,7 +52,7 @@ const GeneralInfo = ({ cafeId }) => {
 
         }
     })
-    const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+    const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
     const { cafeIdContext } = useCafe();
     // console.log("cafe id context in general info-", cafeIdContext)
     const [alert, setAlert] = useState({ open: false, severity: 'info', message: '' });

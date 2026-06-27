@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Box,
+import {Box,
   Grid,
   TextField,
   Button,
@@ -14,12 +13,10 @@ import {
   Paper,
   Stack,
   IconButton,
-  Grid2,
   InputLabel,
   Alert,
   useMediaQuery,
-  useTheme,
-} from "@mui/material";
+  useTheme,} from "@mui/material";
 import { useForm, Controller } from "react-hook-form";
 import axios from "axios";
 import Autocomplete from "@mui/material/Autocomplete";
@@ -86,7 +83,7 @@ const AddEmployeesEatery = ({ onSuccess, onClose, selectEatry }) => {
   const fetchRestaurants = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL
+        `${process.env.VITE_REACT_APP_BACKEND_URL
         }/api/user/admin/cafe-list/get/all`,
         {
           headers: {
@@ -150,7 +147,7 @@ const AddEmployeesEatery = ({ onSuccess, onClose, selectEatry }) => {
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/admin/restaurant/v1/employee`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/admin/restaurant/v1/employee`,
         finalPayload,
         {
           headers: {
@@ -181,7 +178,7 @@ const AddEmployeesEatery = ({ onSuccess, onClose, selectEatry }) => {
 
     try {
       setUploading(true)
-      const response = await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/admin/cf/v1/upload`, formData, {
+      const response = await axios.post(`${process.env.VITE_REACT_APP_BACKEND_URL}/api/admin/cf/v1/upload`, formData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
           "Content-Type": "multipart/form-data"
@@ -227,7 +224,7 @@ const AddEmployeesEatery = ({ onSuccess, onClose, selectEatry }) => {
     formData.append("file", file);
     console.log("file in upload pdf file section", file)
     try {
-      const response = axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/user/admin/uploadFile`, formData, {
+      const response = axios.post(`${process.env.VITE_REACT_APP_BACKEND_URL}/api/user/admin/uploadFile`, formData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
           "Content-Type": "multipart/form-data"

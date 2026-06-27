@@ -46,7 +46,7 @@ import { getTimeDifference } from "../../utils/timeUtils";
 import { MoreVertical24Filled } from "@fluentui/react-icons";
 import { DrawerContext } from "../../context/DrawerContext";
 import { Close } from "@mui/icons-material";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/ui/utils/nextRouting";
 dayjs.extend(utc);
 dayjs.extend(duration);
 
@@ -163,7 +163,7 @@ const Recomendation = () => {
       setLoading(true);
 
       const Response = await axios.get(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/myeats/v1/recommendations`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/myeats/v1/recommendations`,
         {
           headers: { Authorization: `Bearer ${token}` },
           params: {

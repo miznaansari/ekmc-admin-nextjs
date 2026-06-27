@@ -20,7 +20,7 @@ const SocialInfo = ({cafeId, transferTargetCafeId = null, onSave = null}) => {
     });
     
     console.log("cafe id in ", cafeId);
-    const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+    const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
     const token = localStorage.getItem('authToken');
     const [alert, setAlert] = useState({
         open: false,

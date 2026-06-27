@@ -36,8 +36,8 @@ export default function MapComponent() {
   const [filterCrawler, setFilterCrawler] = useState("all");
   const [showFilters, setShowFilters] = useState(false);
 
-  const olamapKey = import.meta.env.VITE_OLAMAP_API_KEY;
-  const olamapProjectKey = import.meta.env.VITE_OLAMAP_PROJECT_KEY;
+  const olamapKey = process.env.VITE_OLAMAP_API_KEY;
+  const olamapProjectKey = process.env.VITE_OLAMAP_PROJECT_KEY;
 
   // 🔥 Apply Filters and Update Map
   const applyFilters = useCallback(() => {

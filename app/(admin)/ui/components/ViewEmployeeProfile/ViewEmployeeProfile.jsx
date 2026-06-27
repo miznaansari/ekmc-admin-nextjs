@@ -16,7 +16,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import axios from 'axios';
 import { Image32Regular } from '@fluentui/react-icons';
 import { Close } from '@mui/icons-material';
-const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
 
 const ViewEmployeeProfile = ({ employeeId, onClose, onEdit ,handleClose}) => {
   const [employeeData, setEmployeeData] = useState(null);
@@ -29,7 +29,7 @@ const ViewEmployeeProfile = ({ employeeId, onClose, onEdit ,handleClose}) => {
       console.log("before api call in view employee profile , id is- ",employeeId)
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/user/admin/get-employee/${employeeId}`,
+          `${process.env.VITE_REACT_APP_BACKEND_URL}/api/user/admin/get-employee/${employeeId}`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem('authToken')}`,

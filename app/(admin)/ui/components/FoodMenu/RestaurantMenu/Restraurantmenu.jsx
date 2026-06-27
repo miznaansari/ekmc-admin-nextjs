@@ -46,7 +46,7 @@ import useDebounce from "../../../hooks/useDebounce";
 import { MoreVertical24Filled } from "@fluentui/react-icons";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutlined";
 import mapAdminAccess from "../../../mapAdminAccess.json"
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "@/ui/utils/nextRouting";
 const StyledContainerLarge = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
   borderRadius: theme.shape.borderRadius,
@@ -139,7 +139,7 @@ const RestaurantMenu = () => {
     try {
       setDeleteLoading(true);
       await axios.delete(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/cafe-menu-item/${deleteTargetItem.cafe_menu_item_id}`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/cafe-menu-item/${deleteTargetItem.cafe_menu_item_id}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setDeleteDialogOpen(false);
@@ -174,7 +174,7 @@ const RestaurantMenu = () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/cafe-menu-items`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/cafe-menu-items`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -220,7 +220,7 @@ const RestaurantMenu = () => {
 
   const fetchRestaurants = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/user/admin/cafe-list/get/all`, {
+      const response = await axios.get(`${process.env.VITE_REACT_APP_BACKEND_URL}/api/user/admin/cafe-list/get/all`, {
         headers: {
           Authorization: `Bearer ${token}`
         },
@@ -257,7 +257,7 @@ const RestaurantMenu = () => {
     console.log("menu= ", menuItem)
 
     try {
-      const response = await axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/cafe-menu-item/${menuItem.cafe_menu_item_id}`, {
+      const response = await axios.get(`${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/cafe-menu-item/${menuItem.cafe_menu_item_id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -315,7 +315,7 @@ const RestaurantMenu = () => {
 
       console.log("payload- ", payload);
 
-      const updateStatusResponse = await axios.put(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/cafe-menu-item/${menuItem.cafe_menu_item_id}`, payload, {
+      const updateStatusResponse = await axios.put(`${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/cafe-menu-item/${menuItem.cafe_menu_item_id}`, payload, {
         headers: {
           Authorization: `Bearer ${token}`
         }

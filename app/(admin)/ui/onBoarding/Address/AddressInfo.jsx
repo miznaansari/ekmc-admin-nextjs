@@ -4,7 +4,7 @@ import AddressInfoForm from "./AddressInfoForm";
 import AddressInfoMap from "./AddressInfoMap";
 import instanceV1 from "../../restaurant/authaxios";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/ui/utils/nextRouting";
 
 const AddressInfo = ({ datas, action, setAction }) => {
     useEffect(() => {
@@ -29,7 +29,7 @@ const AddressInfo = ({ datas, action, setAction }) => {
     const [searchResults, setSearchResults] = useState([]);
     const [isSearching, setIsSearching] = useState(false);
 
-    const OlaApiKey = import.meta.env.VITE_OLAMAP_API_KEY;
+    const OlaApiKey = process.env.VITE_OLAMAP_API_KEY;
     const token = localStorage.getItem("authToken");
     const api = instanceV1(token);
 

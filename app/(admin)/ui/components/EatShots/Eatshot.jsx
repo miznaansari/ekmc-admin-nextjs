@@ -46,7 +46,7 @@ import { CircularProgress } from "@mui/material";
 import VideoPlayerModal from "./VideoPlayerModal";
 import { styled } from '@mui/material/styles';
 import VideoPlayer from "./VideoPlayer";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/ui/utils/nextRouting";
 
 
 const CustomCloseButton = styled(IconButton)(() => ({
@@ -121,7 +121,7 @@ const EatShot = () => {
   const [drawerContent, setDrawerContent] = useState(null);
   const [drawerTitle, setDrawerTitle] = useState("");
   const token = localStorage.getItem("authToken");
-  const baseurl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseurl = process.env.VITE_REACT_APP_BACKEND_URL;
   const [open, setOpen] = useState(false);
   const [videoUrl, setVideoUrl] = useState("");
   const [alert, setAlert] = useState({

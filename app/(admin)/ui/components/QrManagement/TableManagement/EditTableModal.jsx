@@ -21,7 +21,7 @@ import {
 import CloseIcon from '@mui/icons-material/Close';
 import { Close } from '@mui/icons-material';
 
-const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
 
 const style = {
   position: 'absolute',

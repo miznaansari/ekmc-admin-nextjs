@@ -51,7 +51,7 @@ const AddRestaurant = ({ onClose, onSuccess }) => {
   const [error, setError] = useState(null);
 
   const token = localStorage.getItem("authToken");
-  const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
 
   // Validation functions
   const validateEmail = (email) => {

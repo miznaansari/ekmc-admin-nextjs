@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { useNavigate, Link, useLocation } from 'react-router-dom';
+import { useNavigate, Link, useLocation } from '@/ui/utils/nextRouting';
 import {
   Avatar, Menu, MenuItem, Typography, Box, Paper, IconButton, List,
   ListItem, ListItemButton, ListItemIcon, ListItemText, Collapse, Divider,
@@ -59,7 +59,7 @@ export default function Logout() {
   const navigate = useNavigate();
   const location = useLocation();
   const isMobile = useMediaQuery(theme.breakpoints.down('md')); // Check if screen size is mobile
-  const imageDeliveryUrl = import.meta.env.VITE_REACT_APP_IMAGE_DELIVERY_URL;
+  const imageDeliveryUrl = process.env.VITE_REACT_APP_IMAGE_DELIVERY_URL;
   const [drawerOpen, setDrawerOpen] = useState(false); // For controlling the Drawer
   const [menuAnchorEl, setMenuAnchorEl] = useState(null); // For dropdown menu control
   const [userData, setUserData] = useState({

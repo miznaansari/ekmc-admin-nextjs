@@ -14,7 +14,7 @@ import {
   Autocomplete,
 } from "@mui/material";
 import instanceV1 from "../../restaurant/authaxios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/ui/utils/nextRouting";
 
 const commissionOptions = ["0%", "10%", "18%", "20%"];
 

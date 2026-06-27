@@ -50,7 +50,7 @@ import RightDrawer from "../../RightDrawer/RightDrawer";
 import mapAdminAccess from "../../../mapAdminAccess.json"
 import { Checkmark24Regular, MoreVertical16Filled, MoreVertical24Filled } from "@fluentui/react-icons";
 import ActionIcon from "../../../assets/icon/ActionIcon";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/ui/utils/nextRouting";
 const iconBoxStyle = {
   width: 24,
   height: 24,
@@ -141,7 +141,7 @@ const UniversalRecommendationList = () => {
     setError(null);
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/admin/explores`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/admin/explores`,
         {
           params: { pageno: pagination.page, limit: pagination.limit, search:SearchRecommendation },
           headers: {
@@ -233,7 +233,7 @@ const UniversalRecommendationList = () => {
     console.log("payload = ", payload)
 
     try{
-      const response= await axios.put(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/admin/explore`, payload, {
+      const response= await axios.put(`${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/admin/explore`, payload, {
         headers:{
           Authorization:`Bearer ${token}`
         }

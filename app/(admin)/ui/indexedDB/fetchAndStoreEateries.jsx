@@ -3,7 +3,7 @@ import db from "./db";
 export const fetchAndStoreEateries = async (page = 1, limit = 10) => {
   try {
     const token = localStorage.getItem("authToken");
-const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
     const res = await fetch(
       `${baseUrl}/api/admin/v2/cafes?page=${page}&limit=${limit}`,
       {

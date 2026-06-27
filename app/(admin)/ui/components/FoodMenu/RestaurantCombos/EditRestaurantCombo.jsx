@@ -162,7 +162,7 @@ const EditRestaurantCombo = ({ open, handleClose, cafeComboId, combo, onSuccess 
 
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/search-menu-item`,
+          `${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/search-menu-item`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -213,7 +213,7 @@ const EditRestaurantCombo = ({ open, handleClose, cafeComboId, combo, onSuccess 
     
     try {
       const response = await axios.put(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/cafe-combo/${cafeComboId}`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/cafe-combo/${cafeComboId}`,
         payload,
         {
           headers: {
@@ -272,7 +272,7 @@ const EditRestaurantCombo = ({ open, handleClose, cafeComboId, combo, onSuccess 
     try {
       setUploading(true)
       const response = await axios.post(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/admin/cf/v1/upload`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/admin/cf/v1/upload`,
         formData,
         {
           headers: {

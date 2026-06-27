@@ -16,7 +16,7 @@ import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
 import instanceV1 from "../../restaurant/authaxios";
 import TimePart1 from "./TimePart1"; // UI Part
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/ui/utils/nextRouting";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);

@@ -2,7 +2,7 @@ import { Box, Button } from "@mui/material";
 import axios from "axios";
 
 const ApproveEatshot= ({onSuccess, content_id, is_approve})=>{
-    const baseurl= import.meta.env.VITE_REACT_APP_BACKEND_URL;
+    const baseurl= process.env.VITE_REACT_APP_BACKEND_URL;
     const token= localStorage.getItem("authToken");
     console.log("baseUrl:", baseurl);
     console.log("token:",token);

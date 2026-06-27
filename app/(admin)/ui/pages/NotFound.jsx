@@ -8,7 +8,7 @@ import {
     Paper,
     Divider,
 } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/ui/utils/nextRouting";
 import {
     ArrowEnterLeft24Regular,
     ErrorCircle24Regular,

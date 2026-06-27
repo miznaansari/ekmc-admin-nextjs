@@ -36,7 +36,7 @@ import RefreshIcon from "@mui/icons-material/Refresh"; // Import the refresh ico
 import axios from "axios";
 import AddRestaurantCombo from "./AddRestraurantCombo"; // Add Combo component
 import EditRestaurantCombo from "./EditRestaurantCombo"; // Edit Combo component
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "@/ui/utils/nextRouting";
  import mapAdminAccess from "../../../mapAdminAccess.json"
 import useDebounce from "../../../hooks/useDebounce";
 import RightDrawer from "../../RightDrawer/RightDrawer";
@@ -110,7 +110,7 @@ const RestaurantCombos = () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/cafe-combos`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/cafe-combos`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -195,7 +195,7 @@ const RestaurantCombos = () => {
     }
 
     try{
-      const response= await axios.put(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/cafe-combo/${combo.cafe_menu_combo_id}`, payloas, {
+      const response= await axios.put(`${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/cafe-combo/${combo.cafe_menu_combo_id}`, payloas, {
         headers:{
           Authorization:`Bearer ${token}`
         }

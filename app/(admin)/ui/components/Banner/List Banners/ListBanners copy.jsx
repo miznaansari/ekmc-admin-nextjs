@@ -16,7 +16,7 @@ import EditRoute from "../List Routes/EditRoute";
 import AddBanner from "./AddBanner";
 import EditBanner from "./EditBanner";
 import mapAdminAccess from "../../../mapAdminAccess.json"
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/ui/utils/nextRouting";
 
 dayjs.extend(utc);
 dayjs.extend(duration);
@@ -59,7 +59,7 @@ const ListBanners = () => {
   });
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const token = localStorage.getItem("authToken");
-  const baseurl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseurl = process.env.VITE_REACT_APP_BACKEND_URL;
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [drawerContent, setDrawerContent] = useState(null);
   const [page, setPage] = useState(1);

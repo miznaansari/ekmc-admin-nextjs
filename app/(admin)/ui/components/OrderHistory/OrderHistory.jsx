@@ -57,7 +57,7 @@ const OrderHistory = ({ customer, onBack }) => {
       setErrorMessage(''); // Reset the error message before fetching data
 
       const response = await axios.get(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/orderhistory`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/orderhistory`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -138,7 +138,7 @@ const OrderHistory = ({ customer, onBack }) => {
 
       // Perform the API call to update the order status
       const response = await axios.put(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/order-status/${selectedOrder.cafe_order_item_id}`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/order-status/${selectedOrder.cafe_order_item_id}`,
         requestBody,
         {
           headers: {
@@ -170,7 +170,7 @@ const OrderHistory = ({ customer, onBack }) => {
       }
 
       const response = await axios.put(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/delete-order`,
+        `${process.env.VITE_REACT_APP_BACKEND_URL}/api/v1/delete-order`,
         {
           cafe_order_list_id: selectedOrder.id,
         },

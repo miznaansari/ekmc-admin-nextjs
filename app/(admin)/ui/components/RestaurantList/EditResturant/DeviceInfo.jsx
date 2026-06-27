@@ -15,7 +15,7 @@ const DeviceInfo= ({cafeId})=>{
     const handlePageChange = (event, value) => {
       setCurrentPage(value)
    }
-   const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL; 
+   const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL; 
     const token= localStorage.getItem("authToken");
     const [activeRoleId, setActiveRoleId] = useState(2); // default to Manager
 

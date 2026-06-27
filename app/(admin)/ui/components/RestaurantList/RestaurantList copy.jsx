@@ -35,7 +35,7 @@ import { useMediaQuery } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/ui/utils/nextRouting";
 import useDebounce from "../../hooks/useDebounce";
 import { useCafe } from "../../context/cafeContext";
 import AddRestaurant from "../AddRestaurant/AddRestaurant";
@@ -50,7 +50,7 @@ const RestaurantList = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const navigate = useNavigate();
   const token = localStorage.getItem("authToken");
-  const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
 
   const [cafes, setCafes] = useState([]);
   const [loading, setLoading] = useState(true);

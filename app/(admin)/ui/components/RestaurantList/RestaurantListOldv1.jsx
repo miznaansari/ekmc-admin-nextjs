@@ -53,7 +53,7 @@ import axios from "axios";
 import AddRestaurant from "../AddRestaurant/AddRestaurant";
 import ViewProfile from "../ViewProfile/ViewProfile";
 import EditProfile from "../EditProfile/Editprofile";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/ui/utils/nextRouting";
 import useDebounce from "../../hooks/useDebounce";
 import { Controller } from "react-hook-form";
 import ViewColumnIcon from '@mui/icons-material/ViewColumn';
@@ -148,7 +148,7 @@ const RestaurantList = () => {
   const [currentCafeId, setCurrentCafeId] = useState(null);
   const [showAddRestaurant, setShowAddRestaurant] = useState(false);
   const token = localStorage.getItem("authToken");
-  const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
   const [menuPosition, setMenuPosition] = useState(null);
   const {setCafeIdContext}=useCafe();
   // Snackbar state

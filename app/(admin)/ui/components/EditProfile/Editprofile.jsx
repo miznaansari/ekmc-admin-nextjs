@@ -154,8 +154,8 @@ const EditProfile = ({ cafeId, onClose, onSuccess }) => {
     severity: "success",
   });
   // Environment variables
-  const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL; // Base URL for API
-  const imageDeliveryUrl = import.meta.env.VITE_REACT_APP_IMAGE_DELIVERY_URL;
+  const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL; // Base URL for API
+  const imageDeliveryUrl = process.env.VITE_REACT_APP_IMAGE_DELIVERY_URL;
   const authToken = localStorage.getItem("authToken"); // Fetching the token from localStorage
   const token= localStorage.getItem('authToken')
   const [citySearchQuery, setCitySearchQuery]=useState("");

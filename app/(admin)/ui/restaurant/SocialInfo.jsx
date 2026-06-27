@@ -2,7 +2,7 @@ import { Box, Typography, Grid, TextField, Snackbar, Alert } from "@mui/material
 import EditOptions from "./EditOptions";
 import Primary from "./Primary";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/ui/utils/nextRouting";
 import { useEffect, useState } from "react";
 import Spinner from "./Spinner";
 import cafe_profile from "./cafe_profile.json";

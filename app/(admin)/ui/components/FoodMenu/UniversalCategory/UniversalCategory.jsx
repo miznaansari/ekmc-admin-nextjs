@@ -46,7 +46,7 @@ import useDebounce from "../../../hooks/useDebounce";
 import RightDrawer from "../../RightDrawer/RightDrawer";
 import SearchIcon from "@mui/icons-material/Search"; // Corrected import
 import { Checkmark24Regular, CheckmarkCircleRegular, DismissCircleRegular, MoreVertical24Filled } from "@fluentui/react-icons";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/ui/utils/nextRouting";
 
 const iconBoxStyle = {
   width: 24,
@@ -150,7 +150,7 @@ const UniversalCategory = () => {
   const [error, setError] = useState(null);
 
   const token = localStorage.getItem("authToken");
-  const baseUrl=import.meta.env.VITE_REACT_APP_BACKEND_URL
+  const baseUrl=process.env.VITE_REACT_APP_BACKEND_URL
   useEffect(() => {
     fetchCategories();
   }, [page, limit, debouncedSearchQuery]);
@@ -160,7 +160,7 @@ const UniversalCategory = () => {
       setLoading(true);
       const response = await axios.get(
         `${
-          import.meta.env.VITE_REACT_APP_BACKEND_URL
+          process.env.VITE_REACT_APP_BACKEND_URL
         }/api/v1/universal-categories`,
         {
           headers: {
@@ -249,7 +249,7 @@ const UniversalCategory = () => {
     try {
       const response = await axios.post(
         `${
-          import.meta.env.VITE_REACT_APP_BACKEND_URL
+          process.env.VITE_REACT_APP_BACKEND_URL
         }/api/v1/universal-category/merge`,
         {
           new_name: mergeData.new_name,

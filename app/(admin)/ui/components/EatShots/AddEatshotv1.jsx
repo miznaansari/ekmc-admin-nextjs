@@ -1,5 +1,4 @@
-import {
-    Box,
+import {Box,
     Grid,
     TextField,
     Button,
@@ -11,13 +10,10 @@ import {
     Stack,
     IconButton,
     CircularProgress,
-    Grid2,
     Snackbar,
     Alert,
     useMediaQuery,
-    useTheme
-
-} from "@mui/material";
+    useTheme} from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -44,7 +40,7 @@ const AddEatshot = ({ onSuccess, onCancel }) => {
                 captions: ""
             }
         });
-    const baseurl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+    const baseurl = process.env.VITE_REACT_APP_BACKEND_URL;
     const token = localStorage.getItem("authToken");
     const [previewVideo, setPreviewVideo] = useState(null);
     const [uploading, setUploading] = useState(false); // Track upload state
@@ -462,8 +458,8 @@ const AddEatshot = ({ onSuccess, onCancel }) => {
                             </Stack>
                         </Box>
 
-                        <Grid2 container spacing={2}>
-                            <Grid2 xs={12} width={"100%"}>
+                        <Grid container spacing={2}>
+                            <Grid xs={12} width={"100%"}>
                                 <Controller
                                     name="cafes"
                                     control={control}
@@ -493,9 +489,9 @@ const AddEatshot = ({ onSuccess, onCancel }) => {
                                         />
                                     )}
                                 />
-                            </Grid2>
+                            </Grid>
 
-                            <Grid2 xs={12} width={"100%"}>
+                            <Grid xs={12} width={"100%"}>
                                 <Controller
                                     name="tag_user"
                                     control={control}
@@ -532,9 +528,9 @@ const AddEatshot = ({ onSuccess, onCancel }) => {
                                         />
                                     )}
                                 />
-                            </Grid2>
+                            </Grid>
 
-                            <Grid2 xs={12} width={"100%"}>
+                            <Grid xs={12} width={"100%"}>
                                 <Controller
                                     name="author"
                                     control={control}
@@ -569,9 +565,9 @@ const AddEatshot = ({ onSuccess, onCancel }) => {
                                         />
                                     )}
                                 />
-                            </Grid2>
+                            </Grid>
 
-                            <Grid2 xs={12} width={"100%"}>
+                            <Grid xs={12} width={"100%"}>
                                 <Controller
                                     control={control}
                                     name="captions"
@@ -586,9 +582,9 @@ const AddEatshot = ({ onSuccess, onCancel }) => {
                                         />
                                     )}
                                 />
-                            </Grid2>
+                            </Grid>
 
-                            <Grid2 xs={12} width={"100%"}>
+                            <Grid xs={12} width={"100%"}>
                                 <Controller
                                     name="hasTags"
                                     control={control}
@@ -647,8 +643,8 @@ const AddEatshot = ({ onSuccess, onCancel }) => {
                                         </>
                                     )}
                                 />
-                            </Grid2>
-                        </Grid2>
+                            </Grid>
+                        </Grid>
                     </Box>
 
                     {/* Footer Buttons - Fixed at bottom */}

@@ -19,7 +19,7 @@ const Document = ({cafeId, transferTargetCafeId = null, onSave = null}) => {
         }
     });
     
-    const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL; 
+    const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL; 
     const token = localStorage.getItem('authToken');
     const [pdfFile, setPdfFile] = useState(null);
     const [gstCertificateUrl, setGstCertificateUrl] = useState(null);

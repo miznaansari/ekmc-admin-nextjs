@@ -19,7 +19,7 @@ import { useTheme } from "@mui/material/styles";
 
 const ExpandableTable = ({ cafeId }) => {
   const theme = useTheme();
-  const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
   const token = localStorage.getItem("authToken");
 
   /* ================= FORM ================= */

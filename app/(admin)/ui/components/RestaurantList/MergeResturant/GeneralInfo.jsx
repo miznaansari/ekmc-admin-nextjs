@@ -56,7 +56,7 @@ const GeneralInfo = ({ cafeId, transferTargetCafeId = null, onSave = null }) => 
 
         }
     })
-    const baseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+    const baseUrl = process.env.VITE_REACT_APP_BACKEND_URL;
     const { cafeIdContext } = useCafe();
     const activeCafeId = cafeId || cafeIdContext;
     // console.log("cafe id context in general info-", cafeIdContext)

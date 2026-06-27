@@ -1,5 +1,4 @@
-import { 
-    Box, 
+import {Box, 
     Grid, 
     TextField,
     Button,
@@ -9,7 +8,6 @@ import {
     Stack,
     IconButton,
     CircularProgress,
-    Grid2,
     Snackbar,
     Alert,
     useMediaQuery,
@@ -19,9 +17,7 @@ import {
     Autocomplete,
     RadioGroup,
     FormControlLabel,
-    Radio
-    
- } from "@mui/material";
+    Radio} from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -52,7 +48,7 @@ const EditBanner= ({onCancel,onSuccess, bannerId})=>{
             }
         });
             
-    const baseurl= import.meta.env.VITE_REACT_APP_BACKEND_URL;
+    const baseurl= process.env.VITE_REACT_APP_BACKEND_URL;
     const token= localStorage.getItem("authToken");
     const [loading, setLoading]=useState(false);
     const theme= useTheme();
@@ -444,7 +440,7 @@ const EditBanner= ({onCancel,onSuccess, bannerId})=>{
                         pt: 2,
                         pb: 1
                     }}>
-                        <Grid2 xs={12} width="100%">
+                        <Grid xs={12} width="100%">
                             <Box sx={{ display: "flex", alignItems: "center" }}>
                                 <Typography variant="body1" mr={2}>
                                 Type:
@@ -466,7 +462,7 @@ const EditBanner= ({onCancel,onSuccess, bannerId})=>{
                                 )}
                                 />
                             </Box>
-                        </Grid2>
+                        </Grid>
 
 {type === "image" && (
   <Box marginBottom={1}>
@@ -661,8 +657,8 @@ const EditBanner= ({onCancel,onSuccess, bannerId})=>{
   </Box>
 )}
 
-                        <Grid2 container spacing={2}>
-                            <Grid2 xs={12} width={"100%"}>
+                        <Grid container spacing={2}>
+                            <Grid xs={12} width={"100%"}>
                                 <Controller
                                     control={control}
                                     name="banner_title"
@@ -678,9 +674,9 @@ const EditBanner= ({onCancel,onSuccess, bannerId})=>{
                                         />
                                     )}
                                 />
-                            </Grid2>
+                            </Grid>
 
-                            <Grid2 xs={12} width={"100%"}>
+                            <Grid xs={12} width={"100%"}>
                                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                                 <Controller
                                 name="banner_expiry"
@@ -703,7 +699,7 @@ const EditBanner= ({onCancel,onSuccess, bannerId})=>{
                                 )}
                                 />
                                 </LocalizationProvider>
-                            </Grid2>
+                            </Grid>
 
                 {/* banner placement dropdown */}
                 <Autocomplete
@@ -771,7 +767,7 @@ const EditBanner= ({onCancel,onSuccess, bannerId})=>{
                     )}
                 />
 
-                            <Grid2 xs={12} width={"100%"}>
+                            <Grid xs={12} width={"100%"}>
                                 <Box sx={{ display: "flex", alignItems: "center" }}>
                                     <Typography variant="body1" mr={2}>
                                         Status:
@@ -793,9 +789,9 @@ const EditBanner= ({onCancel,onSuccess, bannerId})=>{
                                         {watch("status") === 1 ? "Active" : "Inactive"}
                                     </Typography>
                                 </Box>
-                            </Grid2>
+                            </Grid>
 
-                        </Grid2>
+                        </Grid>
                     </Box>
 
                     <Box sx={{ 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Grid, Paper, Typography, Box, Button } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@/ui/utils/nextRouting';
 import StoreIcon from '@mui/icons-material/Store';
 import AddBusinessIcon from '@mui/icons-material/AddBusiness';
 import QrCodeScannerIcon from '@mui/icons-material/QrCodeScanner';
