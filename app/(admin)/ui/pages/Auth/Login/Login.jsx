@@ -49,6 +49,9 @@ const Login = () => {
     const token = localStorage.getItem("authToken");
     if (token) {
       navigate("/dashboard/insights", { replace: true });
+      if (typeof window !== "undefined") {
+        window.scrollTo(0, 0);
+      }
     }
   }, [navigate]);
 
@@ -122,6 +125,9 @@ const Login = () => {
         setSnackbarOpen(true);
         startInitialSync();
         navigate('/dashboard/insights');
+        if (typeof window !== "undefined") {
+          window.scrollTo(0, 0);
+        }
       } else {
         setSnackbarSeverity('error');
         setSnackbarMessage('Login failed: Token not found or invalid response.');

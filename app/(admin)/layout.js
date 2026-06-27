@@ -33,6 +33,13 @@ export default function AdminLayout({ children }) {
   const { drawerOpenL, setDrawerOpenL } = useContext(DrawerContext);
   const [authorized, setAuthorized] = useState(false);
 
+  // Scroll to top on pathname change (route transition)
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname]);
+
   useEffect(() => {
     const token = localStorage.getItem("authToken");
     const userRole = localStorage.getItem("userRole");
