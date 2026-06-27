@@ -279,6 +279,13 @@ export default function MainNav({ open, setOpen }) {
 
 
   const isMobileScreen = useMediaQuery(theme.breakpoints.up("md"));
+
+  const handleItemClick = () => {
+    if (isSmallScreen) {
+      setOpen(false);
+    }
+  };
+
   return (
     <>
       <MuiAppBar position="static" open={open}>
@@ -306,7 +313,7 @@ export default function MainNav({ open, setOpen }) {
             width: "100vw",
             height: "100vh",
             backgroundColor: "rgba(0,0,0,0.5)",
-            zIndex: 1198,
+            zIndex: 1201,
           }}
         />
       </Fade>
@@ -318,10 +325,12 @@ export default function MainNav({ open, setOpen }) {
         sx={{
           width: 255,
           flexShrink: 0,
+          zIndex: 1205,
           "& .MuiDrawer-paper": {
             width: 260,
             boxSizing: "border-box",
             height: "100%",
+            zIndex: 1205,
           },
         }}
       >
@@ -349,6 +358,7 @@ export default function MainNav({ open, setOpen }) {
                         to={child.path}
                         selected={isActive(child.path, item.label)}
                         sx={{ pl: 3 }}
+                        onClick={handleItemClick}
                       >
                         <ListItemIcon sx={{ minWidth: 20, p: 0, m: 0 }}>
                           <Circle12Regular fontSize={10} />
@@ -369,6 +379,7 @@ export default function MainNav({ open, setOpen }) {
                     component={Link}
                     to={item.path}
                     selected={isActive(item.path, item.label)}
+                    onClick={handleItemClick}
                   >
                     <ListItemIcon>{item.icon}</ListItemIcon>
                     <ListItemText primary={item.label} />
