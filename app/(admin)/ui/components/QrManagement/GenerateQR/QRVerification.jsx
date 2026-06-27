@@ -20,7 +20,7 @@ import {
 } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import VerifiedIcon from "@mui/icons-material/VerifiedUser";
-import DeleteIcon from "@mui/icons-material/DeleteOutline";
+import DeleteIcon from "@mui/icons-material/DeleteOutlined";
 import FileIcon from "@mui/icons-material/InsertDriveFile";
 import { CircularProgress } from "@mui/material";
 

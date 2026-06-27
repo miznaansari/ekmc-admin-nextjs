@@ -44,7 +44,7 @@ import EditRestaurantMenu from "./EditReataurantMenu"; // Ensure this uses the D
 import { Drawer } from "@mui/material";
 import useDebounce from "../../../hooks/useDebounce";
 import { MoreVertical24Filled } from "@fluentui/react-icons";
-import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutlined";
 import mapAdminAccess from "../../../mapAdminAccess.json"
 import { useLocation, useNavigate } from "react-router-dom";
 const StyledContainerLarge = styled(Box)(({ theme }) => ({
