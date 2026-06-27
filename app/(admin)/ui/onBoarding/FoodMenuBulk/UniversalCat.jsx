@@ -3,7 +3,7 @@ import { Box, TextField, Autocomplete } from "@mui/material";
 import axios from "axios";
 import useDebounce from "../../hooks/useDebounce";
 import FastfoodIcon from "@mui/icons-material/Fastfood";
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutlined";
 
 export default function UniversalCat({
   label = "Universal Category",

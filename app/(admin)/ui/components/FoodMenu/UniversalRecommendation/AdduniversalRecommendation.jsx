@@ -25,7 +25,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { Close } from "@mui/icons-material";
 import axios from "axios";
 import { CloudArrowUp16Regular, Delete16Regular, Image16Regular, Image32Regular } from "@fluentui/react-icons";
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutlined';
 import Demo from "../../ImageCroper/Demo";
 import DemoAi from "../../ImageCroper/DemoAi";
 import CloseIcon from "@mui/icons-material/Close";

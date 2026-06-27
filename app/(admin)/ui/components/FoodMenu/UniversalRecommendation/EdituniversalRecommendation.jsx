@@ -29,7 +29,7 @@ import {
 } from "@mui/material";
 import Close from "@mui/icons-material/Close";
 import Delete from "@mui/icons-material/Delete";
-import AddCircleOutline from "@mui/icons-material/AddCircleOutline";
+import AddCircleOutline from "@mui/icons-material/AddCircleOutlined";
 import { CloudArrowUp16Regular, Delete16Regular, Image16Regular, Image32Regular } from "@fluentui/react-icons";
 import Demo from "../../ImageCroper/Demo";
 import CloseIcon from "@mui/icons-material/Close";

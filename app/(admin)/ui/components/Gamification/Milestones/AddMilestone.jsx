@@ -26,7 +26,7 @@ import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import { Close, Videocam } from "@mui/icons-material";
 import { CloudArrowUp16Regular, Delete16Regular, Image32Regular } from "@fluentui/react-icons";
 import Demo from "../../ImageCroper/Demo";
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutlined';
 
 const AddMilestone = ({ onSuccess, onCancel }) => {
     const {

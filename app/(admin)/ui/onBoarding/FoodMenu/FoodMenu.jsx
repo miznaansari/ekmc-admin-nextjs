@@ -18,7 +18,7 @@ import {
     Divider,
     Box,
 } from "@mui/material";
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutlined";
 import DeleteIcon from "@mui/icons-material/Delete";
 import instanceV1 from "../../restaurant/authaxios";
 import UniversalCat from "../FoodMenuBulk/UniversalCat";

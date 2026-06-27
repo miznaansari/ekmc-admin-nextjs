@@ -6,7 +6,7 @@ import GlobalSnackbar from "../../utils/GlobalSnackbar.jsx";
 import { useLocation } from "react-router-dom";
 import mapAdminAccess from "../../mapAdminAccess.json";
 import instanceV1 from "../../restaurant/authaxios";
-import CheckCircleOutline from "@mui/icons-material/CheckCircleOutline";
+import CheckCircleOutline from "@mui/icons-material/CheckCircleOutlined";
 import RateReview from "@mui/icons-material/RateReview";
 import CancelOutlined from "@mui/icons-material/CancelOutlined";
 import HourglassEmpty from "@mui/icons-material/HourglassEmpty";

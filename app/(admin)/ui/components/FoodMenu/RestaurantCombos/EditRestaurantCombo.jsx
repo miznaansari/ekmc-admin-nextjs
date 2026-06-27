@@ -25,8 +25,8 @@ import {
   DialogActions,
 } from "@mui/material";
 import { useForm, useFieldArray, Controller } from "react-hook-form";
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
-import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutlined";
+import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutlined";
 import axios from "axios";
 import CustomDropdown from "../../custom dropdown/CustomDropdown";
 import { CloudArrowUp16Regular, Delete16Regular, Image32Regular } from "@fluentui/react-icons";
