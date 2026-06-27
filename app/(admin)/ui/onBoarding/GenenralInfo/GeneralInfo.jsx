@@ -545,7 +545,7 @@ const GeneralInfo = ({ datas, action, setAction, actionIdChanged, setMenuData, s
                         Food Type
                     </Typography>
                     <Grid container alignItems="center" spacing={1}>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Checkbox
                                 checked={data.is_non_veg}
                                 onChange={handleCheckboxChange("is_non_veg")}
@@ -553,8 +553,8 @@ const GeneralInfo = ({ datas, action, setAction, actionIdChanged, setMenuData, s
                             />
                             <Nonvegdsvg />
                             <Typography>Non-Veg</Typography>
-                        </Box>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        </Grid>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Checkbox
                                 checked={data.is_veg}
                                 onChange={handleCheckboxChange("is_veg")}
@@ -562,8 +562,8 @@ const GeneralInfo = ({ datas, action, setAction, actionIdChanged, setMenuData, s
                             />
                             <Vegdsvg />
                             <Typography>Veg</Typography>
-                        </Box>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        </Grid>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Checkbox
                                 checked={data.is_egg}
                                 onChange={handleCheckboxChange("is_egg")}
@@ -571,7 +571,7 @@ const GeneralInfo = ({ datas, action, setAction, actionIdChanged, setMenuData, s
                             />
                             <Eggdsvg />
                             <Typography>Egg</Typography>
-                        </Box>
+                        </Grid>
                     </Grid>
 
                     {/* Save button */}

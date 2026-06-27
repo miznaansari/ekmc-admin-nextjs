@@ -93,10 +93,10 @@ const GeneralInfo = ({ cafeId, transferTargetCafeId = null, onSave = null }) => 
     }, []);
 
     //check something in form has changed or not
-useEffect(() => {
-    const imageChanged = imagePreview !== originalImagePreview;
-    setIsFormModified(isDirty || imageChanged);
-}, [isDirty, imagePreview, originalImagePreview]);
+    useEffect(() => {
+        const imageChanged = imagePreview !== originalImagePreview;
+        setIsFormModified(isDirty || imageChanged);
+    }, [isDirty, imagePreview, originalImagePreview]);
 
     //fetch cafe generalinfo by id-
     const fetchGeneralInfo = async () => {
@@ -559,7 +559,7 @@ useEffect(() => {
                         <Controller
                             name="cafe_email"
                             control={control}
-                            render={({ field, fieldState: { error }  }) => (
+                            render={({ field, fieldState: { error } }) => (
                                 <TextField
                                     {...field}
                                     size="small"
@@ -622,7 +622,7 @@ useEffect(() => {
                         <Controller
                             name="cafe_mobile_number"
                             control={control}
-                       
+
                             render={({ field, fieldState: { error } }) => (
                                 <TextField
                                     {...field}
@@ -706,7 +706,7 @@ useEffect(() => {
                 {/* Feature Tags */}
                 <Typography variant="body1" mt={2}>Feature Tags</Typography>
                 <Grid container spacing={1} alignItems="center">
-                    <Box display="flex" alignItems="center" gap={1}>
+                    <Grid display="flex" alignItems="center" gap={1}>
                         <Controller
                             name="is_featured"
                             control={control}
@@ -726,9 +726,9 @@ useEffect(() => {
                             )}
                         />
                         <Typography>Featured</Typography>
-                    </Box>
+                    </Grid>
 
-                    <Box display="flex" alignItems="center" gap={1}>
+                    <Grid display="flex" alignItems="center" gap={1}>
                         <Controller
                             name="is_most_visited"
                             control={control}
@@ -748,9 +748,9 @@ useEffect(() => {
                             )}
                         />
                         <Typography>Most-Visited</Typography>
-                    </Box>
+                    </Grid>
 
-                    <Box display="flex" alignItems="center" gap={1}>
+                    <Grid display="flex" alignItems="center" gap={1}>
                         <Controller
                             name="is_new_opening"
                             control={control}
@@ -770,7 +770,7 @@ useEffect(() => {
                             )}
                         />
                         <Typography>New Opening</Typography>
-                    </Box>
+                    </Grid>
                 </Grid>
 
 
@@ -778,7 +778,7 @@ useEffect(() => {
                 <Typography variant="body1" mt={2}>Food Type</Typography>
                 <Grid container alignItems="center">
                     <Grid container spacing={1} alignItems="center" gap={1}>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             {/* <Checkbox 
                             //checked={data.is_non_veg === 1} 
                             sx={{
@@ -810,8 +810,8 @@ useEffect(() => {
                             />
                             <Nonvegdsvg />
                             <Typography>Non-Veg</Typography>
-                        </Box>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        </Grid>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="is_veg"
                                 control={control}
@@ -832,14 +832,14 @@ useEffect(() => {
                             />
                             <Vegdsvg />
                             <Typography>Veg</Typography>
-                        </Box>
+                        </Grid>
                     </Grid>
                 </Grid>
                 {/* Menu Options */}
                 <Typography variant="body1" mt={2}>Menu Options</Typography>
                 <Grid container alignItems="center">
                     <Grid container spacing={1} alignItems="center" gap={1}>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="allow_order"
                                 control={control}
@@ -859,8 +859,8 @@ useEffect(() => {
                                 )}
                             />
                             <Typography>Order</Typography>
-                        </Box>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        </Grid>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="allow_qr_edit"
                                 control={control}
@@ -880,8 +880,8 @@ useEffect(() => {
                                 )}
                             />
                             <Typography>Qr Edit</Typography>
-                        </Box>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        </Grid>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="allow_login"
                                 control={control}
@@ -901,8 +901,8 @@ useEffect(() => {
                                 )}
                             />
                             <Typography>Login</Typography>
-                        </Box>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        </Grid>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="allow_menu_edit"
                                 control={control}
@@ -922,8 +922,8 @@ useEffect(() => {
                                 )}
                             />
                             <Typography>Menu Edit</Typography>
-                        </Box>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        </Grid>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="allow_profile_edit"
                                 control={control}
@@ -943,7 +943,7 @@ useEffect(() => {
                                 )}
                             />
                             <Typography>Edit Profile</Typography>
-                        </Box>
+                        </Grid>
                     </Grid>
                 </Grid>
 
@@ -952,7 +952,7 @@ useEffect(() => {
 
                 <Grid container alignItems="center">
                     <Grid container spacing={1} alignItems="center" gap={1}>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="is_user_location_required"
                                 control={control}
@@ -972,8 +972,8 @@ useEffect(() => {
                                 )}
                             />
                             <Typography>User Location Required</Typography>
-                        </Box>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        </Grid>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="status"
                                 control={control}
@@ -993,8 +993,8 @@ useEffect(() => {
                                 )}
                             />
                             <Typography>Status</Typography>
-                        </Box>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        </Grid>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="is_published"
                                 control={control}
@@ -1014,11 +1014,11 @@ useEffect(() => {
                                 )}
                             />
                             <Typography>Published</Typography>
-                        </Box>
+                        </Grid>
 
 
 
-                        <Box display="flex" alignItems="center" gap={1}>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="is_test_cafe"
                                 control={control}
@@ -1038,11 +1038,11 @@ useEffect(() => {
                                 )}
                             />
                             <Typography>Test Cafe</Typography>
-                        </Box>
+                        </Grid>
 
 
 
-                        <Box display="flex" alignItems="center" gap={1}>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="is_limelight"
                                 control={control}
@@ -1062,8 +1062,8 @@ useEffect(() => {
                                 )}
                             />
                             <Typography>Limelight</Typography>
-                        </Box>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        </Grid>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="is_hot_today"
                                 control={control}
@@ -1083,8 +1083,8 @@ useEffect(() => {
                                 )}
                             />
                             <Typography>Hot Today</Typography>
-                        </Box>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        </Grid>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="is_featured"
                                 control={control}
@@ -1104,8 +1104,8 @@ useEffect(() => {
                                 )}
                             />
                             <Typography>Featured</Typography>
-                        </Box>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        </Grid>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="is_daily_report"
                                 control={control}
@@ -1125,7 +1125,7 @@ useEffect(() => {
                                 )}
                             />
                             <Typography>Daily Report</Typography>
-                        </Box>
+                        </Grid>
                     </Grid>
                 </Grid>
 

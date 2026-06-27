@@ -249,7 +249,7 @@ const GeneralInfo = ({ cafeId }) => {
                     </Snackbar>
                 </Collapse>
 
-                <Stack direction="row" spacing={2} alignItems="center" mt={2}>
+                <Stack direction="row" spacing={2} alignItems="center" my={2}>
                     <Avatar
                         variant="rounded"
                         sx={{ width: 80, height: 80, position: 'relative' }}
@@ -305,11 +305,7 @@ const GeneralInfo = ({ cafeId }) => {
                 </Stack>
 
                 <Grid container spacing={2} mt={1}>
-                    <Grid
-                        size={{
-                            xs: 12,
-                            md: 6
-                        }}>
+                    <Grid size={{ xs: 12, md: 6 }}>
                         <Controller
                             name="cafe_name"
                             control={control}
@@ -334,11 +330,7 @@ const GeneralInfo = ({ cafeId }) => {
                             )}
                         />
                     </Grid>
-                    <Grid
-                        size={{
-                            xs: 12,
-                            md: 6
-                        }}>
+                    <Grid size={{ xs: 12, md: 6 }}>
                         <Controller
                             name="cafe_slogan"
                             control={control}
@@ -363,15 +355,11 @@ const GeneralInfo = ({ cafeId }) => {
                             )}
                         />
                     </Grid>
-                    <Grid
-                        size={{
-                            xs: 12,
-                            md: 6
-                        }}>
+                    <Grid size={{ xs: 12, md: 6 }}>
                         <Controller
                             name="cafe_email"
                             control={control}
-                          
+
                             render={({ field, fieldState: { error } }) => (
                                 <TextField
                                     {...field}
@@ -394,11 +382,7 @@ const GeneralInfo = ({ cafeId }) => {
                             )}
                         />
                     </Grid>
-                    <Grid
-                        size={{
-                            xs: 12,
-                            md: 6
-                        }}>
+                    <Grid size={{ xs: 12, md: 6 }}>
                         {/* <Controller
                     name="cafe_mobile_number"
                     control={control}
@@ -491,7 +475,7 @@ const GeneralInfo = ({ cafeId }) => {
                 {/* Feature Tags */}
                 <Typography variant="body1" mt={2}>Feature Tags</Typography>
                 <Grid container spacing={1} alignItems="center">
-                    <Box display="flex" alignItems="center" gap={1}>
+                    <Grid display="flex" alignItems="center" gap={1}>
                         <Controller
                             name="is_featured"
                             control={control}
@@ -511,9 +495,9 @@ const GeneralInfo = ({ cafeId }) => {
                             )}
                         />
                         <Typography>Featured</Typography>
-                    </Box>
+                    </Grid>
 
-                    <Box display="flex" alignItems="center" gap={1}>
+                    <Grid display="flex" alignItems="center" gap={1}>
                         <Controller
                             name="is_most_visited"
                             control={control}
@@ -533,9 +517,9 @@ const GeneralInfo = ({ cafeId }) => {
                             )}
                         />
                         <Typography>Most-Visited</Typography>
-                    </Box>
+                    </Grid>
 
-                    <Box display="flex" alignItems="center" gap={1}>
+                    <Grid display="flex" alignItems="center" gap={1}>
                         <Controller
                             name="is_new_opening"
                             control={control}
@@ -555,7 +539,7 @@ const GeneralInfo = ({ cafeId }) => {
                             )}
                         />
                         <Typography>New Opening</Typography>
-                    </Box>
+                    </Grid>
                 </Grid>
 
 
@@ -563,7 +547,7 @@ const GeneralInfo = ({ cafeId }) => {
                 <Typography variant="body1" mt={2}>Food Type</Typography>
                 <Grid container alignItems="center">
                     <Grid container spacing={1} alignItems="center" gap={1}>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             {/* <Checkbox 
                             //checked={data.is_non_veg === 1} 
                             sx={{
@@ -595,8 +579,8 @@ const GeneralInfo = ({ cafeId }) => {
                             />
                             <Nonvegdsvg />
                             <Typography>Non-Veg</Typography>
-                        </Box>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        </Grid>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="is_veg"
                                 control={control}
@@ -617,14 +601,14 @@ const GeneralInfo = ({ cafeId }) => {
                             />
                             <Vegdsvg />
                             <Typography>Veg</Typography>
-                        </Box>
+                        </Grid>
                     </Grid>
                 </Grid>
                 {/* Menu Options */}
                 <Typography variant="body1" mt={2}>Menu Options</Typography>
                 <Grid container alignItems="center">
                     <Grid container spacing={1} alignItems="center" gap={1}>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="allow_order"
                                 control={control}
@@ -644,8 +628,8 @@ const GeneralInfo = ({ cafeId }) => {
                                 )}
                             />
                             <Typography>Order</Typography>
-                        </Box>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        </Grid>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="allow_qr_edit"
                                 control={control}
@@ -665,8 +649,8 @@ const GeneralInfo = ({ cafeId }) => {
                                 )}
                             />
                             <Typography>Qr Edit</Typography>
-                        </Box>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        </Grid>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="allow_login"
                                 control={control}
@@ -686,8 +670,8 @@ const GeneralInfo = ({ cafeId }) => {
                                 )}
                             />
                             <Typography>Login</Typography>
-                        </Box>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        </Grid>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="allow_menu_edit"
                                 control={control}
@@ -707,8 +691,8 @@ const GeneralInfo = ({ cafeId }) => {
                                 )}
                             />
                             <Typography>Menu Edit</Typography>
-                        </Box>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        </Grid>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="allow_profile_edit"
                                 control={control}
@@ -728,7 +712,7 @@ const GeneralInfo = ({ cafeId }) => {
                                 )}
                             />
                             <Typography>Edit Profile</Typography>
-                        </Box>
+                        </Grid>
                     </Grid>
                 </Grid>
 
@@ -737,7 +721,7 @@ const GeneralInfo = ({ cafeId }) => {
 
                 <Grid container alignItems="center">
                     <Grid container spacing={1} alignItems="center" gap={1}>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="is_user_location_required"
                                 control={control}
@@ -757,8 +741,8 @@ const GeneralInfo = ({ cafeId }) => {
                                 )}
                             />
                             <Typography>User Location Required</Typography>
-                        </Box>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        </Grid>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="status"
                                 control={control}
@@ -778,8 +762,8 @@ const GeneralInfo = ({ cafeId }) => {
                                 )}
                             />
                             <Typography>Status</Typography>
-                        </Box>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        </Grid>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="is_published"
                                 control={control}
@@ -799,11 +783,11 @@ const GeneralInfo = ({ cafeId }) => {
                                 )}
                             />
                             <Typography>Published</Typography>
-                        </Box>
+                        </Grid>
 
 
 
-                        <Box display="flex" alignItems="center" gap={1}>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="is_test_cafe"
                                 control={control}
@@ -823,11 +807,11 @@ const GeneralInfo = ({ cafeId }) => {
                                 )}
                             />
                             <Typography>Test Cafe</Typography>
-                        </Box>
+                        </Grid>
 
 
 
-                        <Box display="flex" alignItems="center" gap={1}>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="is_limelight"
                                 control={control}
@@ -847,8 +831,8 @@ const GeneralInfo = ({ cafeId }) => {
                                 )}
                             />
                             <Typography>Limelight</Typography>
-                        </Box>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        </Grid>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="is_hot_today"
                                 control={control}
@@ -868,8 +852,8 @@ const GeneralInfo = ({ cafeId }) => {
                                 )}
                             />
                             <Typography>Hot Today</Typography>
-                        </Box>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        </Grid>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="is_featured"
                                 control={control}
@@ -889,8 +873,8 @@ const GeneralInfo = ({ cafeId }) => {
                                 )}
                             />
                             <Typography>Featured</Typography>
-                        </Box>
-                        <Box display="flex" alignItems="center" gap={1}>
+                        </Grid>
+                        <Grid display="flex" alignItems="center" gap={1}>
                             <Controller
                                 name="is_daily_report"
                                 control={control}
@@ -910,11 +894,11 @@ const GeneralInfo = ({ cafeId }) => {
                                 )}
                             />
                             <Typography>Daily Report</Typography>
-                        </Box>
+                        </Grid>
                     </Grid>
                 </Grid>
 
-                <Box sx={{ display: "flex", mt: 2 }}>
+                <Box display="flex" mt={2}>
                     <Button variant="contained"
                         onClick={handleSubmit(hadleEditGeneralinfo)}
 
@@ -924,6 +908,7 @@ const GeneralInfo = ({ cafeId }) => {
                     </Button>
                 </Box>
             </Paper>
+
             {/* Crop Dialog */}
             <Demo
                 selectedImage={selectedImage}
@@ -935,6 +920,7 @@ const GeneralInfo = ({ cafeId }) => {
                 setOpenCropDialog={setOpenCropDialog}
             />
         </>
+
     );
 }
 export default GeneralInfo;
